@@ -48,10 +48,10 @@ const Testimonials = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="mb-16 text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-sans">
+                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-sans">
                         Trusted by Visionaries
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-muted max-w-2xl mx-auto">
                         We don't just build software; we build long-term technical partnerships.
                     </p>
                 </div>
@@ -67,14 +67,14 @@ const Testimonials = () => {
                         >
                             <Quote size={40} className="text-primary/20 absolute top-6 right-6" />
 
-                            <p className="text-slate-300 mb-8 leading-relaxed relative z-10">
+                            <p className="text-foreground/80 mb-8 leading-relaxed relative z-10">
                                 "{t.quote}"
                             </p>
 
                             <div className="flex items-center gap-4">
-                                <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" />
+                                <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full border border-border/10 grayscale group-hover:grayscale-0 transition-all" />
                                 <div>
-                                    <h4 className="text-white font-bold font-sans">{t.name}</h4>
+                                    <h4 className="text-foreground font-bold font-sans">{t.name}</h4>
                                     <p className="text-xs text-primary font-mono">{t.role}</p>
                                 </div>
                             </div>

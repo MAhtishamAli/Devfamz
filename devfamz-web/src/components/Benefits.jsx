@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Clock, Users, ArrowRight } from 'lucide-react';
 import Section from './ui/Section';
@@ -6,25 +7,29 @@ import SectionHeader from './ui/SectionHeader';
 const benefits = [
     {
         icon: (props) => <ShieldCheck {...props} />,
-        color: "text-emerald-400",
+        colorClass: "text-emerald-600 dark:text-emerald-400", // Emerald
+        lightStyle: "bg-emerald-50/80 border-emerald-200 shadow-emerald-100",
         title: "Enterprise Grade Security",
         desc: "We implement banking-level encryption and security best practices by default."
     },
     {
         icon: (props) => <Zap {...props} />,
-        color: "text-yellow-400",
+        colorClass: "text-amber-600 dark:text-amber-400", // Amber
+        lightStyle: "bg-amber-50/80 border-amber-200 shadow-amber-100",
         title: "Blazing Fast Performance",
         desc: "Optimized for core web vitals. We target sub-500ms load times."
     },
     {
         icon: (props) => <Clock {...props} />,
-        color: "text-blue-400",
+        colorClass: "text-blue-600 dark:text-blue-400", // Blue
+        lightStyle: "bg-blue-50/80 border-blue-200 shadow-blue-100",
         title: "On-Time Delivery",
         desc: "Our project managers ensure we hit every milestone. No excuses."
     },
     {
         icon: (props) => <Users {...props} />,
-        color: "text-purple-400",
+        colorClass: "text-purple-600 dark:text-purple-400", // Purple
+        lightStyle: "bg-purple-50/80 border-purple-200 shadow-purple-100",
         title: "Top 1% Talent",
         desc: "Work directly with senior engineers. No junior trainees."
     }
@@ -45,9 +50,9 @@ const Benefits = () => {
                         className="mb-10"
                     />
 
-                    <button className="text-primary font-semibold hover:text-white transition-colors flex items-center gap-2 group font-mono text-sm tracking-wide">
+                    <Link to="/blog" className="text-primary font-semibold hover:text-foreground transition-colors flex items-center gap-2 group font-mono text-sm tracking-wide">
                         View our culture manifesto <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Right Grid */}
@@ -55,46 +60,65 @@ const Benefits = () => {
                     {benefits.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
                             whileInView={{
                                 opacity: 1,
                                 scale: 1,
-                                borderColor: ["rgba(255,255,255,0.1)", "rgba(0,232,255,0.6)", "rgba(255,255,255,0.1)"],
-                                boxShadow: ["0 0 0px rgba(0,232,255,0)", "0 0 20px rgba(0,232,255,0.2)", "0 0 0px rgba(0,232,255,0)"]
+                                y: [0, -8, 0], // Subtle Floating
+                                borderColor: ["rgba(var(--border) / 0.1)", "rgba(var(--border) / 0.3)", "rgba(var(--border) / 0.1)"]
                             }}
                             viewport={{ once: true }}
                             transition={{
-                                opacity: { duration: 0.4, delay: idx * 0.1 },
-                                scale: { duration: 0.4, delay: idx * 0.1 },
-                                borderColor: { duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: idx * 0.2 },
-                                boxShadow: { duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: idx * 0.2 }
+                                opacity: { duration: 0.5, delay: idx * 0.1 },
+                                scale: { duration: 0.5, delay: idx * 0.1 },
+                                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: idx * 0.2 },
+                                borderColor: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: idx * 0.2 }
                             }}
-                            className="cyber-card p-6 rounded-2xl group cursor-default relative overflow-hidden border border-white/10"
+                            whileHover={{
+                                scale: 1.05,
+                                y: -12,
+                                // Color handled by class
+                            }}
+                            // Replaced bg-slate-800 with cyber-card equivalent but explicitly handled for theme
+                            className={`
+                                p-6 rounded-2xl group cursor-default relative overflow-hidden backdrop-blur-md transition-all duration-300
+                                border ${item.lightStyle} dark:bg-surface/20 dark:border-white/10
+                                hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10
+                            `}
                         >
-                            {/* Icon Container with Flash Animation */}
+                            {/* Icon Container with Fast Buffer (Ripple) Animation */}
                             <motion.div
-                                className={`mb-4 relative inline-block ${item.color}`}
+                                className={`mb-4 relative inline-block ${item.colorClass}`}
                                 animate={{
-                                    opacity: [0.4, 1, 0.4],
-                                    scale: [1, 1.2, 1],
-                                    filter: ["brightness(1)", "brightness(2)", "brightness(1)"]
+                                    scale: [1, 1.1, 1],
+                                    filter: ["brightness(1)", "brightness(1.5)", "brightness(1)"]
                                 }}
                                 transition={{
-                                    duration: 1.5,
-                                    times: [0, 0.2, 1], // Sharp attack
-                                    delay: 0.5 + (idx * 0.1), // Flash shortly after appearing
-                                    ease: "easeOut"
+                                    duration: 1,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
                                 }}
                             >
-                                {/* Glowing Blur Backdrop */}
-                                <div className="absolute inset-0 bg-current blur-2xl opacity-40 rounded-full" />
+                                {/* Ripple Layers */}
+                                <motion.div
+                                    className="absolute inset-0 rounded-full border border-current opacity-50"
+                                    animate={{ scale: [1, 2], opacity: [0.5, 0] }}
+                                    transition={{ duration: 1, repeat: Infinity, ease: "easeOut" }}
+                                />
+                                <motion.div
+                                    className="absolute inset-0 rounded-full border border-current opacity-30"
+                                    animate={{ scale: [1, 1.5], opacity: [0.3, 0] }}
+                                    transition={{ duration: 1, delay: 0.2, repeat: Infinity, ease: "easeOut" }}
+                                />
 
-                                {/* The Icon */}
-                                <item.icon size={32} className="relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+                                {/* Glowing Blur Backdrop (Adjusted for Light Mode) */}
+                                <div className="absolute inset-0 bg-current blur-2xl opacity-20 rounded-full" />
+
+                                <item.icon size={32} className="relative z-10 drop-shadow-sm" />
                             </motion.div>
 
-                            <h3 className="text-lg font-bold text-white mb-2 font-sans group-hover:text-primary transition-colors">{item.title}</h3>
-                            <p className="text-sm text-slate-400 leading-relaxed font-mono">{item.desc}</p>
+                            <h3 className="text-lg font-extrabold mb-2 font-sans group-hover:text-primary transition-colors text-slate-900 dark:text-foreground">{item.title}</h3>
+                            <p className="text-sm text-slate-700 dark:text-slate-400 leading-relaxed font-mono font-semibold">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

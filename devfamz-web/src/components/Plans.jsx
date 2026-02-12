@@ -37,15 +37,15 @@ const Plans = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-8">
                     <span className="text-primary font-medium tracking-widest uppercase text-sm">Flexible Pricing</span>
-                    <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">Choose Your Growth Path</h2>
-                    <p className="text-slate-400 mb-8 max-w-xl mx-auto">Transparent pricing for every stage of your journey. No hidden fees, just results.</p>
+                    <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6 text-foreground">Choose Your Growth Path</h2>
+                    <p className="text-muted mb-8 max-w-xl mx-auto">Transparent pricing for every stage of your journey. No hidden fees, just results.</p>
 
                     {/* Billing Toggle */}
                     <div className="flex items-center justify-center gap-4">
-                        <span className={`text-sm font-medium ${billing === 'monthly' ? 'text-white' : 'text-slate-500'}`}>Monthly</span>
+                        <span className={`text-sm font-medium ${billing === 'monthly' ? 'text-foreground' : 'text-muted'}`}>Monthly</span>
                         <button
                             onClick={() => setBilling(billing === 'monthly' ? 'yearly' : 'monthly')}
-                            className="w-14 h-7 bg-white/10 rounded-full p-1 relative transition-colors hover:bg-white/20"
+                            className="w-14 h-7 bg-border/20 rounded-full p-1 relative transition-colors hover:bg-border/30"
                         >
                             <motion.div
                                 layout
@@ -54,7 +54,7 @@ const Plans = () => {
                                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
                             />
                         </button>
-                        <span className={`text-sm font-medium ${billing === 'yearly' ? 'text-white' : 'text-slate-500'}`}>
+                        <span className={`text-sm font-medium ${billing === 'yearly' ? 'text-foreground' : 'text-muted'}`}>
                             Yearly <span className="text-xs text-emerald-400 font-bold ml-1">(Save 20%)</span>
                         </span>
                     </div>
@@ -68,7 +68,7 @@ const Plans = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className={`relative p-8 rounded-3xl flex flex-col transition-all duration-300 cyber-card ${plan.highlight ? 'border-primary/50 shadow-2xl shadow-primary/10 scale-105 z-10 from-white/15 to-white/5' : 'hover:scale-[1.02]'}`}
+                            className={`relative p-8 rounded-3xl flex flex-col transition-all duration-300 cyber-card ${plan.highlight ? 'border-primary/50 shadow-2xl shadow-primary/10 scale-105 z-10' : 'hover:scale-[1.02]'}`}
                         >
                             {plan.highlight && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold rounded-full uppercase tracking-widest shadow-lg">
@@ -76,24 +76,24 @@ const Plans = () => {
                                 </div>
                             )}
                             <div className="mb-6">
-                                <h3 className="text-lg font-medium text-slate-300 mb-2">{plan.name}</h3>
-                                <div className="text-4xl font-bold text-white mb-2">
+                                <h3 className="text-lg font-medium text-muted mb-2">{plan.name}</h3>
+                                <div className="text-4xl font-bold text-foreground mb-2">
                                     {plan.price[billing]}
-                                    {plan.price.monthly !== "Custom" && <span className="text-sm font-normal text-slate-500">/{billing === 'monthly' ? 'mo' : 'yr'}</span>}
+                                    {plan.price.monthly !== "Custom" && <span className="text-sm font-normal text-muted">/{billing === 'monthly' ? 'mo' : 'yr'}</span>}
                                 </div>
-                                <p className="text-sm text-slate-400">{plan.desc}</p>
+                                <p className="text-sm text-muted">{plan.desc}</p>
                             </div>
 
                             <ul className="space-y-4 mb-8 flex-grow">
                                 {plan.features.map((feat, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
+                                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
                                         <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
                                         {feat}
                                     </li>
                                 ))}
                             </ul>
 
-                            <button className={`w-full py-3 rounded-xl font-semibold transition-all shadow-lg ${plan.highlight ? 'bg-primary hover:bg-indigo-600 text-white shadow-primary/25' : 'bg-white/5 hover:bg-white/10 text-white'}`}>
+                            <button className={`w-full py-3 rounded-xl font-semibold transition-all shadow-lg ${plan.highlight ? 'bg-primary hover:bg-cyan-600 text-black shadow-primary/25' : 'bg-surface hover:bg-border/20 text-foreground'}`}>
                                 Choose {plan.name}
                             </button>
                         </motion.div>

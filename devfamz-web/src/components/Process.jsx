@@ -57,17 +57,17 @@ const Process = () => {
                             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                         />
                     </motion.div>
-                    <h2 className="text-3xl md:text-5xl font-bold font-sans text-white mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold font-sans text-foreground mb-6">
                         Execution Protocol
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto font-mono text-sm leading-relaxed">
+                    <p className="text-muted max-w-2xl mx-auto font-mono text-sm leading-relaxed">
                         Precision-engineered workflow designed for rapid deployment and maximum scalability.
                     </p>
                 </div>
 
                 <div className="relative mt-20">
                     {/* Background Line (Static) */}
-                    <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-white/5 z-0" />
+                    <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-border/10 z-0" />
 
                     {/* Progress Line (Dynamic) */}
                     <div className="hidden md:block absolute top-12 left-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent z-0 transition-all duration-1000 ease-linear"
@@ -94,7 +94,7 @@ const Process = () => {
                                 >
                                     {/* Icon Node */}
                                     <div className="relative mb-8">
-                                        <div className={`w-24 h-24 rounded-full bg-background border flex items-center justify-center transition-all duration-500 relative z-10 cyber-card ${isActive ? 'border-primary text-primary bg-primary/10 shadow-[0_0_30px_rgba(0,232,255,0.2)]' : 'border-white/10 text-slate-500'}`}>
+                                        <div className={`w-24 h-24 rounded-full bg-background border flex items-center justify-center transition-all duration-500 relative z-10 cyber-card ${isActive ? 'border-primary text-primary bg-primary/10 shadow-[0_0_30px_rgba(0,232,255,0.2)]' : 'border-border/10 text-muted'}`}>
                                             {step.icon}
                                         </div>
 
@@ -107,18 +107,18 @@ const Process = () => {
                                         )}
 
                                         {/* Connector Dot for Mobile */}
-                                        <div className="md:hidden absolute top-full left-1/2 w-0.5 h-12 bg-white/10 -translate-x-1/2" />
+                                        <div className="md:hidden absolute top-full left-1/2 w-0.5 h-12 bg-border/10 -translate-x-1/2" />
                                     </div>
 
                                     {/* Content */}
                                     <div className="relative">
-                                        <span className={`absolute -top-12 left-1/2 -translate-x-1/2 text-[100px] font-bold font-mono select-none pointer-events-none transition-colors duration-700 ${isActive ? 'text-primary/5' : 'text-white/5'}`}>
+                                        <span className={`absolute -top-12 left-1/2 -translate-x-1/2 text-[100px] font-bold font-mono select-none pointer-events-none transition-colors duration-700 ${isActive ? 'text-primary/5' : 'text-foreground/5'}`}>
                                             0{idx + 1}
                                         </span>
-                                        <h3 className={`text-lg font-bold mb-3 font-sans transition-colors duration-500 ${isActive ? 'text-white' : 'text-slate-500'}`}>
+                                        <h3 className={`text-lg font-bold mb-3 font-sans transition-colors duration-500 ${isActive ? 'text-foreground' : 'text-muted'}`}>
                                             {step.title}
                                         </h3>
-                                        <p className="text-xs text-slate-400 font-mono leading-relaxed">
+                                        <p className="text-xs text-muted font-mono leading-relaxed">
                                             {step.desc}
                                         </p>
                                     </div>

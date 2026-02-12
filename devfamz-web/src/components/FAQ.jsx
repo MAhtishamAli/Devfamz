@@ -25,10 +25,10 @@ const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     return (
-        <section className="py-24 relative">
+        <section className="py-24 relative bg-background">
             <div className="container mx-auto px-6 max-w-4xl">
                 <div className="mb-16 text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-sans">
+                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-sans">
                         Frequently Asked Questions
                     </h2>
                 </div>
@@ -41,14 +41,14 @@ const FAQ = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1, duration: 0.4 }}
                             viewport={{ once: true }}
-                            className="cyber-card rounded-xl overflow-hidden"
+                            className="bg-surface/50 backdrop-blur-sm border border-border/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all"
                         >
                             <button
                                 onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-                                className="w-full p-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                                className="w-full p-6 flex items-center justify-between text-left hover:bg-surface/80 transition-colors"
                             >
-                                <span className="font-bold text-slate-200">{faq.question}</span>
-                                <span className="text-primary">
+                                <span className="font-bold text-foreground">{faq.question}</span>
+                                <span className="text-primary flex-shrink-0 ml-4">
                                     {activeIndex === idx ? <Minus size={20} /> : <Plus size={20} />}
                                 </span>
                             </button>
@@ -61,7 +61,7 @@ const FAQ = () => {
                                         transition={{ duration: 0.3 }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
+                                        <div className="p-6 pt-0 text-muted leading-relaxed border-t border-border/10">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

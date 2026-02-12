@@ -22,7 +22,7 @@ const SectionHeader = ({ title, subtitle, kicker, align = 'center', className = 
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-primary font-medium tracking-widest uppercase text-xs or md:text-sm mb-3 block font-mono"
+                    className="text-primary font-medium tracking-widest uppercase text-xs md:text-sm mb-3 block font-mono"
                 >
                     {kicker}
                 </motion.span>
@@ -33,7 +33,7 @@ const SectionHeader = ({ title, subtitle, kicker, align = 'center', className = 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl md:text-5xl font-bold text-white mb-6 font-sans leading-tight"
+                className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-sans leading-tight"
             >
                 {title}
             </motion.h2>
@@ -44,7 +44,7 @@ const SectionHeader = ({ title, subtitle, kicker, align = 'center', className = 
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className={`text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed font-light ${align === 'center' ? 'mx-auto' : ''}`}
+                    className={`text-muted max-w-2xl text-sm md:text-base leading-relaxed font-light ${align === 'center' ? 'mx-auto' : ''}`}
                 >
                     {subtitle}
                 </motion.p>

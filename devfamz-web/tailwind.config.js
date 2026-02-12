@@ -4,20 +4,21 @@ export default {
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
-                background: "#07070A", // Void Black
-                surface: "#0B0D10", // Deep Charcoal
-                primary: "#00E8FF", // Electric Cyan
-                secondary: "#8A00FF", // Deep Violet
-                accent: "#00E8FF", // Cyan for highlights
-                "text-main": "#f1f5f9",
-                "text-muted": "#94a3b8",
+                background: "rgb(var(--background) / <alpha-value>)",
+                foreground: "rgb(var(--foreground) / <alpha-value>)",
+                primary: "rgb(var(--primary) / <alpha-value>)",
+                secondary: "rgb(var(--secondary) / <alpha-value>)",
+                muted: "rgb(var(--muted) / <alpha-value>)",
+                surface: "rgb(var(--surface) / <alpha-value>)",
+                border: "rgb(var(--border) / <alpha-value>)",
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
-                mono: ['JetBrains Mono', 'Fira Code', 'monospace'], // Technical Mono
+                mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
             },
             animation: {
                 "fade-up": "fadeUp 0.8s ease-out forwards",

@@ -48,16 +48,16 @@ const Stats = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1, duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="flex flex-col items-center justify-center p-6 border border-white/5 bg-white/5 backdrop-blur-sm rounded-2xl group hover:border-primary/50 transition-colors"
+                            className="flex flex-col items-center justify-center p-6 cyber-card backdrop-blur-sm rounded-2xl group hover:border-primary/50 transition-colors"
                         >
-                            <span className="text-4xl md:text-5xl font-mono font-bold text-white mb-2 group-hover:text-primary transition-colors flex items-center justify-center">
+                            <span className="text-4xl md:text-5xl font-mono font-black text-foreground mb-2 group-hover:text-primary transition-colors flex items-center justify-center">
                                 <Counter from={0} to={stat.value} suffix={stat.suffix} />
                             </span>
                             <motion.span
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 0.5 + (idx * 0.1), duration: 0.5 }}
-                                className="text-xs md:text-sm text-slate-400 uppercase tracking-widest text-center"
+                                className="text-xs md:text-sm text-muted uppercase tracking-widest text-center font-bold"
                             >
                                 {stat.label}
                             </motion.span>
