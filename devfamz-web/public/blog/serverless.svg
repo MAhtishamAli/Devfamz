@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0d0500"/>
+      <stop offset="100%" stop-color="#050200"/>
+    </radialGradient>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ff9900" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff9900" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigglow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffdd00"/>
+      <stop offset="100%" stop-color="#ff6600"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9900" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#ff9900" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff9900" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="400" cy="250" r="280" fill="url(#orangeGlow)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#ff9900" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/><line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/><line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="100" y1="0" x2="100" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+  </g>
+
+  <!-- AWS Cloud (top - S3) -->
+  <g transform="translate(320, 20)" filter="url(#glow)">
+    <rect width="160" height="65" rx="10" fill="#1a0d00" stroke="#ff9900" stroke-width="1.5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="10" fill="#ff9900" text-anchor="middle" font-weight="bold">Amazon S3</text>
+    <line x1="10" y1="23" x2="150" y2="23" stroke="#ff9900" stroke-width="0.5" opacity="0.5"/>
+    <text x="80" y="37" font-family="monospace" font-size="8" fill="#ffbb66" text-anchor="middle">PUT /images/photo.jpg</text>
+    <text x="80" y="50" font-family="monospace" font-size="8" fill="#ff9900" text-anchor="middle">Event: s3:ObjectCreated</text>
+    <circle cx="140" cy="12" r="5" fill="#28c840"/>
+  </g>
+
+  <!-- Arrow down S3 -> Lambda -->
+  <g filter="url(#glow)">
+    <line x1="400" y1="85" x2="400" y2="135" stroke="#ff9900" stroke-width="2" stroke-dasharray="5,3"/>
+    <polygon points="393,135 400,148 407,135" fill="#ff9900"/>
+    <text x="415" y="115" font-family="Arial, sans-serif" font-size="8" fill="#ffbb66" opacity="0.8">Trigger</text>
+  </g>
+
+  <!-- Lambda function (center) -->
+  <g transform="translate(310, 148)" filter="url(#bigglow)">
+    <rect width="180" height="100" rx="12" fill="#1a0800" stroke="#ff9900" stroke-width="2.5"/>
+    <!-- Lambda λ symbol -->
+    <text x="90" y="35" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="url(#boltGrad)" text-anchor="middle">λ</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#ff9900" text-anchor="middle" font-weight="bold">AWS Lambda</text>
+    <line x1="15" y1="68" x2="165" y2="68" stroke="#ff9900" stroke-width="0.5" opacity="0.5"/>
+    <text x="90" y="82" font-family="monospace" font-size="8" fill="#ffbb66" text-anchor="middle">processImage()</text>
+    <text x="90" y="94" font-family="monospace" font-size="8" fill="#aaa" text-anchor="middle">Node.js 20.x · ARM64</text>
+  </g>
+
+  <!-- Connection lines from Lambda to services -->
+  <g filter="url(#softglow)" opacity="0.8">
+    <!-- Lambda -> API Gateway (left) -->
+    <line x1="310" y1="200" x2="185" y2="200" stroke="#ff9900" stroke-width="1.5"/>
+    <polygon points="185,195 172,200 185,205" fill="#ff9900"/>
+    <!-- Lambda -> DynamoDB (bottom-left) -->
+    <line x1="340" y1="248" x2="220" y2="330" stroke="#00aaff" stroke-width="1.5"/>
+    <polygon points="224,336 212,330 220,320" fill="#00aaff"/>
+    <!-- Lambda -> SNS (bottom-right) -->
+    <line x1="460" y1="248" x2="580" y2="330" stroke="#ff6600" stroke-width="1.5"/>
+    <polygon points="576,336 588,330 580,320" fill="#ff6600"/>
+    <!-- Lambda -> EventBridge (right) -->
+    <line x1="490" y1="200" x2="615" y2="200" stroke="#ff9900" stroke-width="1.5"/>
+    <polygon points="615,195 628,200 615,205" fill="#ff9900"/>
+  </g>
+
+  <!-- API Gateway (left) -->
+  <g transform="translate(68, 168)" filter="url(#glow)">
+    <rect width="100" height="70" rx="8" fill="#1a0800" stroke="#ff9900" stroke-width="1.5"/>
+    <text x="50" y="16" font-family="Arial, sans-serif" font-size="8" fill="#ff9900" text-anchor="middle" font-weight="bold">API Gateway</text>
+    <line x1="8" y1="21" x2="92" y2="21" stroke="#ff9900" stroke-width="0.5" opacity="0.5"/>
+    <text x="50" y="35" font-family="monospace" font-size="7" fill="#ffbb66" text-anchor="middle">GET /users</text>
+    <text x="50" y="47" font-family="monospace" font-size="7" fill="#ffbb66" text-anchor="middle">POST /images</text>
+    <text x="50" y="59" font-family="monospace" font-size="7" fill="#00aaff" text-anchor="middle">REST + WebSocket</text>
+  </g>
+
+  <!-- EventBridge (right) -->
+  <g transform="translate(630, 168)" filter="url(#glow)">
+    <rect width="105" height="70" rx="8" fill="#1a0800" stroke="#ff9900" stroke-width="1.5"/>
+    <text x="52" y="16" font-family="Arial, sans-serif" font-size="8" fill="#ff9900" text-anchor="middle" font-weight="bold">EventBridge</text>
+    <line x1="8" y1="21" x2="97" y2="21" stroke="#ff9900" stroke-width="0.5" opacity="0.5"/>
+    <text x="52" y="35" font-family="monospace" font-size="7" fill="#ffbb66" text-anchor="middle">Rule: schedule</text>
+    <text x="52" y="47" font-family="monospace" font-size="7" fill="#ffbb66" text-anchor="middle">cron(0 8 * * ?)</text>
+    <text x="52" y="59" font-family="monospace" font-size="7" fill="#00aaff" text-anchor="middle">Event Bus</text>
+  </g>
+
+  <!-- DynamoDB (bottom-left) -->
+  <g transform="translate(138, 318)" filter="url(#glow)">
+    <rect width="110" height="75" rx="8" fill="#001a2a" stroke="#00aaff" stroke-width="1.5"/>
+    <text x="55" y="17" font-family="Arial, sans-serif" font-size="8" fill="#00aaff" text-anchor="middle" font-weight="bold">DynamoDB</text>
+    <line x1="8" y1="22" x2="102" y2="22" stroke="#00aaff" stroke-width="0.5" opacity="0.5"/>
+    <text x="55" y="36" font-family="monospace" font-size="7" fill="#66ccff" text-anchor="middle">Single Table Design</text>
+    <text x="55" y="49" font-family="monospace" font-size="7" fill="#66ccff" text-anchor="middle">On-Demand Mode</text>
+    <text x="55" y="62" font-family="monospace" font-size="7" fill="#00aaff" text-anchor="middle">PK: USER#id</text>
+    <circle cx="95" cy="10" r="4" fill="#28c840"/>
+  </g>
+
+  <!-- SNS (bottom-right) -->
+  <g transform="translate(550, 318)" filter="url(#glow)">
+    <rect width="105" height="75" rx="8" fill="#1a0800" stroke="#ff6600" stroke-width="1.5"/>
+    <text x="52" y="17" font-family="Arial, sans-serif" font-size="8" fill="#ff6600" text-anchor="middle" font-weight="bold">Amazon SNS</text>
+    <line x1="8" y1="22" x2="97" y2="22" stroke="#ff6600" stroke-width="0.5" opacity="0.5"/>
+    <text x="52" y="36" font-family="monospace" font-size="7" fill="#ffaa66" text-anchor="middle">Push Notification</text>
+    <text x="52" y="49" font-family="monospace" font-size="7" fill="#ffaa66" text-anchor="middle">Email + SMS</text>
+    <text x="52" y="62" font-family="monospace" font-size="7" fill="#ff6600" text-anchor="middle">Fan-out Pattern</text>
+    <circle cx="90" cy="10" r="4" fill="#28c840"/>
+  </g>
+
+  <!-- CloudWatch (bottom center) -->
+  <g transform="translate(322, 370)" filter="url(#glow)">
+    <rect width="156" height="55" rx="8" fill="#1a0800" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="78" y="17" font-family="Arial, sans-serif" font-size="8" fill="#c4a0ff" text-anchor="middle" font-weight="bold">CloudWatch + X-Ray</text>
+    <line x1="8" y1="22" x2="148" y2="22" stroke="#7b3fe4" stroke-width="0.5" opacity="0.5"/>
+    <text x="78" y="36" font-family="monospace" font-size="7" fill="#aa88ff" text-anchor="middle">Metrics · Logs · Tracing</text>
+    <text x="78" y="49" font-family="monospace" font-size="7" fill="#aa88ff" text-anchor="middle">Alarm on p99 &gt; 500ms</text>
+  </g>
+
+  <!-- Lines to CloudWatch -->
+  <g opacity="0.5" stroke="#7b3fe4" stroke-width="1" stroke-dasharray="4,3">
+    <line x1="400" y1="248" x2="400" y2="370"/>
+  </g>
+
+  <!-- Cost indicator -->
+  <g transform="translate(30, 380)" filter="url(#softglow)">
+    <rect width="100" height="55" rx="6" fill="#0a0500" stroke="#ff9900" stroke-width="1"/>
+    <text x="50" y="16" font-family="Arial, sans-serif" font-size="9" fill="#ff9900" text-anchor="middle">💰 Cost Savings</text>
+    <text x="50" y="31" font-family="monospace" font-size="10" fill="#00ff88" text-anchor="middle" font-weight="bold">$0.000017</text>
+    <text x="50" y="45" font-family="Arial, sans-serif" font-size="7" fill="#ffbb66" text-anchor="middle">per request</text>
+  </g>
+
+  <!-- Lambda Code snippet floating -->
+  <g transform="translate(660, 380)" filter="url(#softglow)">
+    <rect width="130" height="60" rx="6" fill="#0a0500" stroke="#ff9900" stroke-width="1"/>
+    <text x="8" y="16" font-family="monospace" font-size="7" fill="#888">// Handler</text>
+    <text x="8" y="28" font-family="monospace" font-size="7" fill="#ff9900">exports.handler</text>
+    <text x="8" y="39" font-family="monospace" font-size="7" fill="#ffbb66">  = async (event)</text>
+    <text x="8" y="50" font-family="monospace" font-size="7" fill="#00ff88">  =&gt; processEvent</text>
+  </g>
+
+  <!-- Bottom banner -->
+  <rect x="0" y="440" width="800" height="60" fill="#050200" opacity="0.95"/>
+  <text x="400" y="465" font-family="Arial Black, sans-serif" font-size="17" font-weight="900" fill="#ff9900" text-anchor="middle" filter="url(#glow)">Serverless Architecture · AWS Lambda</text>
+  <text x="400" y="485" font-family="Arial, sans-serif" font-size="10" fill="#ffbb66" text-anchor="middle">Event-Driven · Auto-Scale · Pay-Per-Request · Zero Infrastructure</text>
+</svg>

@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0d0520"/>
+      <stop offset="100%" stop-color="#050010"/>
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#7b3fe4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#7b3fe4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#f0b429" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f0b429" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigglow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="blockGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0a40"/>
+      <stop offset="100%" stop-color="#0d0520"/>
+    </linearGradient>
+    <linearGradient id="chainConn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7b3fe4" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#7b3fe4" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7b3fe4" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="ethGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9945ff"/>
+      <stop offset="50%" stop-color="#627eea"/>
+      <stop offset="100%" stop-color="#3c3c9a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="400" cy="250" r="280" fill="url(#purpleGlow)"/>
+  <circle cx="580" cy="150" r="150" fill="url(#goldGlow)" opacity="0.5"/>
+
+  <!-- Starfield -->
+  <g fill="white" opacity="0.6">
+    <circle cx="60" cy="30" r="1"/><circle cx="150" cy="70" r="0.8"/><circle cx="280" cy="20" r="1.2"/>
+    <circle cx="520" cy="40" r="0.8"/><circle cx="720" cy="60" r="1"/><circle cx="780" cy="30" r="0.7"/>
+    <circle cx="50" cy="400" r="1"/><circle cx="750" cy="420" r="0.8"/><circle cx="30" cy="200" r="0.7"/>
+    <circle cx="770" cy="300" r="1"/><circle cx="100" cy="460" r="0.8"/><circle cx="700" cy="470" r="1"/>
+  </g>
+
+  <!-- Blockchain chain (horizontal) -->
+  <!-- Block 1 (Genesis) -->
+  <g transform="translate(40, 170)" filter="url(#softglow)">
+    <rect width="110" height="120" rx="10" fill="url(#blockGrad1)" stroke="#7b3fe4" stroke-width="2"/>
+    <rect x="0" y="0" width="110" height="28" rx="10" fill="#1a0a40"/>
+    <rect x="0" y="18" width="110" height="10" fill="#1a0a40"/>
+    <text x="55" y="18" font-family="monospace" font-size="9" fill="#c4a0ff" text-anchor="middle">Block #1</text>
+    <text x="55" y="32" font-family="monospace" font-size="7" fill="#888" text-anchor="middle">GENESIS</text>
+    <line x1="8" y1="38" x2="102" y2="38" stroke="#7b3fe4" stroke-width="0.5" opacity="0.5"/>
+    <text x="8" y="52" font-family="monospace" font-size="6" fill="#aaa">Hash:</text>
+    <text x="8" y="63" font-family="monospace" font-size="5.5" fill="#c4a0ff">0x0000...4a7f</text>
+    <text x="8" y="78" font-family="monospace" font-size="6" fill="#aaa">Prev:</text>
+    <text x="8" y="89" font-family="monospace" font-size="5.5" fill="#888">0x0000...0000</text>
+    <text x="8" y="103" font-family="monospace" font-size="6" fill="#aaa">Nonce:</text>
+    <text x="65" y="103" font-family="monospace" font-size="5.5" fill="#f0b429">2821934</text>
+    <text x="8" y="114" font-family="monospace" font-size="5.5" fill="#00ff88">✓ Valid</text>
+  </g>
+
+  <!-- Chain connector 1-2 -->
+  <g filter="url(#glow)">
+    <rect x="152" y="225" width="38" height="4" rx="2" fill="url(#chainConn)"/>
+    <polygon points="186,221 196,227 186,233" fill="#7b3fe4"/>
+  </g>
+
+  <!-- Block 2 -->
+  <g transform="translate(198, 170)" filter="url(#softglow)">
+    <rect width="110" height="120" rx="10" fill="url(#blockGrad1)" stroke="#7b3fe4" stroke-width="2"/>
+    <rect x="0" y="0" width="110" height="28" rx="10" fill="#1a0a40"/>
+    <rect x="0" y="18" width="110" height="10" fill="#1a0a40"/>
+    <text x="55" y="18" font-family="monospace" font-size="9" fill="#c4a0ff" text-anchor="middle">Block #2</text>
+    <text x="55" y="32" font-family="monospace" font-size="7" fill="#f0b429" text-anchor="middle">TX: 1 ETH</text>
+    <line x1="8" y1="38" x2="102" y2="38" stroke="#7b3fe4" stroke-width="0.5" opacity="0.5"/>
+    <text x="8" y="52" font-family="monospace" font-size="6" fill="#aaa">Hash:</text>
+    <text x="8" y="63" font-family="monospace" font-size="5.5" fill="#c4a0ff">0xb4e2...9c3d</text>
+    <text x="8" y="78" font-family="monospace" font-size="6" fill="#aaa">Prev:</text>
+    <text x="8" y="89" font-family="monospace" font-size="5.5" fill="#888">0x0000...4a7f</text>
+    <text x="8" y="103" font-family="monospace" font-size="6" fill="#aaa">Nonce:</text>
+    <text x="65" y="103" font-family="monospace" font-size="5.5" fill="#f0b429">5621047</text>
+    <text x="8" y="114" font-family="monospace" font-size="5.5" fill="#00ff88">✓ Valid</text>
+  </g>
+
+  <!-- Chain connector 2-3 -->
+  <g filter="url(#glow)">
+    <rect x="310" y="225" width="38" height="4" rx="2" fill="url(#chainConn)"/>
+    <polygon points="344,221 354,227 344,233" fill="#7b3fe4"/>
+  </g>
+
+  <!-- Block 3 (Smart Contract) -->
+  <g transform="translate(356, 170)" filter="url(#softglow)">
+    <rect width="115" height="120" rx="10" fill="url(#blockGrad1)" stroke="#00ff88" stroke-width="2.5"/>
+    <rect x="0" y="0" width="115" height="28" rx="10" fill="#001a0d"/>
+    <rect x="0" y="18" width="115" height="10" fill="#001a0d"/>
+    <text x="57" y="18" font-family="monospace" font-size="9" fill="#00ff88" text-anchor="middle">Block #3</text>
+    <text x="57" y="32" font-family="monospace" font-size="6.5" fill="#00ffaa" text-anchor="middle">SMART CONTRACT</text>
+    <line x1="8" y1="38" x2="107" y2="38" stroke="#00ff88" stroke-width="0.5" opacity="0.5"/>
+    <text x="8" y="52" font-family="monospace" font-size="5.5" fill="#aaa">contract ERC20 {</text>
+    <text x="8" y="63" font-family="monospace" font-size="5.5" fill="#00ff88">  mapping(addr=&gt;uint)</text>
+    <text x="8" y="74" font-family="monospace" font-size="5.5" fill="#c4a0ff">  function transfer(</text>
+    <text x="8" y="85" font-family="monospace" font-size="5.5" fill="#c4a0ff">    addr to, uint val)</text>
+    <text x="8" y="96" font-family="monospace" font-size="5.5" fill="#f0b429">  Gas: 21,000</text>
+    <text x="8" y="109" font-family="monospace" font-size="5.5" fill="#00ff88">}</text>
+  </g>
+
+  <!-- Chain connector 3-4 -->
+  <g filter="url(#glow)">
+    <rect x="473" y="225" width="38" height="4" rx="2" fill="url(#chainConn)"/>
+    <polygon points="507,221 517,227 507,233" fill="#7b3fe4"/>
+  </g>
+
+  <!-- Block 4 (NFT) -->
+  <g transform="translate(519, 170)" filter="url(#softglow)">
+    <rect width="110" height="120" rx="10" fill="url(#blockGrad1)" stroke="#f0b429" stroke-width="2"/>
+    <rect x="0" y="0" width="110" height="28" rx="10" fill="#1a0c00"/>
+    <rect x="0" y="18" width="110" height="10" fill="#1a0c00"/>
+    <text x="55" y="18" font-family="monospace" font-size="9" fill="#f0b429" text-anchor="middle">Block #4</text>
+    <text x="55" y="32" font-family="monospace" font-size="7" fill="#ffcc66" text-anchor="middle">NFT MINT</text>
+    <line x1="8" y1="38" x2="102" y2="38" stroke="#f0b429" stroke-width="0.5" opacity="0.5"/>
+    <text x="8" y="52" font-family="monospace" font-size="6" fill="#aaa">Token ID:</text>
+    <text x="8" y="63" font-family="monospace" font-size="5.5" fill="#f0b429">#4421</text>
+    <text x="8" y="78" font-family="monospace" font-size="6" fill="#aaa">URI: ipfs://</text>
+    <text x="8" y="89" font-family="monospace" font-size="5.5" fill="#ffcc66">Qm7n...3xRt</text>
+    <text x="8" y="103" font-family="monospace" font-size="6" fill="#aaa">Owner:</text>
+    <text x="8" y="114" font-family="monospace" font-size="5.5" fill="#c4a0ff">0x742d...2Af</text>
+  </g>
+
+  <!-- Ethereum diamond symbol (big, center-right floating) -->
+  <g transform="translate(665, 100)" filter="url(#bigglow)">
+    <!-- ETH diamond shape -->
+    <polygon points="60,0 0,100 60,130 120,100" fill="url(#ethGrad)" opacity="0.85"/>
+    <polygon points="60,0 120,100 60,130 0,100" fill="#627eea" opacity="0.3"/>
+    <polygon points="60,0 0,100 60,70" fill="#9945ff" opacity="0.7"/>
+    <polygon points="60,0 120,100 60,70" fill="#3c3c9a" opacity="0.7"/>
+    <polygon points="0,100 60,70 60,130" fill="#627eea" opacity="0.6"/>
+    <polygon points="120,100 60,70 60,130" fill="#c4a0ff" opacity="0.3"/>
+    <text x="60" y="165" font-family="Arial Black, sans-serif" font-size="14" fill="#627eea" text-anchor="middle" font-weight="900">ETH</text>
+  </g>
+
+  <!-- DeFi floating tokens -->
+  <g transform="translate(50, 50)" filter="url(#softglow)">
+    <circle cx="0" cy="0" r="22" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Arial Black, sans-serif" font-size="14" fill="#7b3fe4" text-anchor="middle">🦄</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="8" fill="#c4a0ff" text-anchor="middle">UNI</text>
+  </g>
+
+  <g transform="translate(690, 380)" filter="url(#softglow)">
+    <circle cx="0" cy="0" r="22" fill="#001a2a" stroke="#00aaff" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Arial Black, sans-serif" font-size="14" fill="#00aaff" text-anchor="middle">💧</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="8" fill="#66ccff" text-anchor="middle">AAVE</text>
+  </g>
+
+  <g transform="translate(30, 320)" filter="url(#softglow)">
+    <circle cx="0" cy="0" r="20" fill="#1a1000" stroke="#f0b429" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="Arial Black, sans-serif" font-size="13" fill="#f0b429" text-anchor="middle">◈</text>
+    <text x="0" y="29" font-family="Arial, sans-serif" font-size="8" fill="#ffcc66" text-anchor="middle">MKR</text>
+  </g>
+
+  <!-- Consensus nodes -->
+  <g font-family="Arial, sans-serif" font-size="8" filter="url(#softglow)">
+    <text x="400" y="355" fill="#888" text-anchor="middle">Proof-of-Stake Consensus Validators</text>
+    <circle cx="280" cy="380" r="16" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="280" y="378" font-size="7" fill="#c4a0ff" text-anchor="middle">Node</text>
+    <text x="280" y="388" font-size="6" fill="#00ff88" text-anchor="middle">✓</text>
+    <circle cx="330" cy="380" r="16" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="330" y="378" font-size="7" fill="#c4a0ff" text-anchor="middle">Node</text>
+    <text x="330" y="388" font-size="6" fill="#00ff88" text-anchor="middle">✓</text>
+    <circle cx="380" cy="380" r="16" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="380" y="378" font-size="7" fill="#c4a0ff" text-anchor="middle">Node</text>
+    <text x="380" y="388" font-size="6" fill="#00ff88" text-anchor="middle">✓</text>
+    <circle cx="430" cy="380" r="16" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="430" y="378" font-size="7" fill="#c4a0ff" text-anchor="middle">Node</text>
+    <text x="430" y="388" font-size="6" fill="#00ff88" text-anchor="middle">✓</text>
+    <circle cx="480" cy="380" r="16" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="480" y="378" font-size="7" fill="#c4a0ff" text-anchor="middle">Node</text>
+    <text x="480" y="388" font-size="6" fill="#00ff88" text-anchor="middle">✓</text>
+    <circle cx="530" cy="380" r="16" fill="#1a0a40" stroke="#7b3fe4" stroke-width="1.5"/>
+    <text x="530" y="378" font-size="7" fill="#c4a0ff" text-anchor="middle">Node</text>
+    <text x="530" y="388" font-size="6" fill="#00ff88" text-anchor="middle">✓</text>
+    <!-- Connector lines between nodes -->
+    <line x1="296" y1="380" x2="314" y2="380" stroke="#7b3fe4" stroke-width="1" opacity="0.6"/>
+    <line x1="346" y1="380" x2="364" y2="380" stroke="#7b3fe4" stroke-width="1" opacity="0.6"/>
+    <line x1="396" y1="380" x2="414" y2="380" stroke="#7b3fe4" stroke-width="1" opacity="0.6"/>
+    <line x1="446" y1="380" x2="464" y2="380" stroke="#7b3fe4" stroke-width="1" opacity="0.6"/>
+    <line x1="496" y1="380" x2="514" y2="380" stroke="#7b3fe4" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- Bottom banner -->
+  <rect x="0" y="435" width="800" height="65" fill="#050010" opacity="0.95"/>
+  <text x="400" y="462" font-family="Arial Black, sans-serif" font-size="18" font-weight="900" fill="#7b3fe4" text-anchor="middle" filter="url(#glow)">Web3 &amp; Blockchain Development 2026</text>
+  <text x="400" y="484" font-family="Arial, sans-serif" font-size="11" fill="#c4a0ff" text-anchor="middle">Smart Contracts · DeFi · NFTs · Ethereum · Solidity · Decentralized Apps</text>
+</svg>

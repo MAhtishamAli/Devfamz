@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="greenStream" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00ff88" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#centerGlow)"/>
+
+  <!-- Grid -->
+  <g opacity="0.04" stroke="white" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/><line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/><line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="100" y1="0" x2="100" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+  </g>
+
+  <!-- Next.js Logo (Triangle N) -->
+  <g transform="translate(330, 25)" filter="url(#glow)">
+    <circle cx="70" cy="65" r="60" fill="black" stroke="white" stroke-width="2"/>
+    <text x="70" y="85" font-family="Arial Black, sans-serif" font-size="56" font-weight="900" fill="white" text-anchor="middle">N</text>
+  </g>
+
+  <!-- Server box (left) -->
+  <rect x="50" y="150" width="170" height="220" rx="12" fill="#1a1a1a" stroke="#444" stroke-width="1.5"/>
+  <rect x="50" y="150" width="170" height="35" rx="12" fill="#222"/>
+  <rect x="50" y="172" width="170" height="13" fill="#222"/>
+  <!-- Server icon dots -->
+  <circle cx="68" cy="167" r="4" fill="#ff5f57"/>
+  <circle cx="84" cy="167" r="4" fill="#febc2e"/>
+  <circle cx="100" cy="167" r="4" fill="#28c840"/>
+  <text x="200" y="167" font-family="monospace" font-size="10" fill="#888" text-anchor="end">server.tsx</text>
+
+  <!-- Server code content -->
+  <text x="65" y="205" font-family="monospace" font-size="8" fill="#888">// Server Component</text>
+  <text x="65" y="218" font-family="monospace" font-size="8" fill="#4ec9b0">async function</text>
+  <text x="65" y="231" font-family="monospace" font-size="8" fill="#dcdcaa">Page()</text>
+  <text x="65" y="244" font-family="monospace" font-size="8" fill="#d4d4d4">{</text>
+  <text x="65" y="257" font-family="monospace" font-size="8" fill="#9cdcfe">  const data =</text>
+  <text x="65" y="270" font-family="monospace" font-size="8" fill="#ce9178">  await db.query()</text>
+  <text x="65" y="283" font-family="monospace" font-size="8" fill="#d4d4d4">  return (</text>
+  <text x="65" y="296" font-family="monospace" font-size="8" fill="#4ec9b0">    &lt;main&gt;</text>
+  <text x="65" y="309" font-family="monospace" font-size="8" fill="#ce9178">      &lt;Data /&gt;</text>
+  <text x="65" y="322" font-family="monospace" font-size="8" fill="#4ec9b0">    &lt;/main&gt;</text>
+  <text x="65" y="335" font-family="monospace" font-size="8" fill="#d4d4d4">  )</text>
+  <text x="65" y="350" font-family="monospace" font-size="8" fill="#d4d4d4">}</text>
+
+  <!-- Server label -->
+  <g filter="url(#softglow)">
+    <rect x="80" y="363" width="110" height="22" rx="4" fill="#333"/>
+    <text x="135" y="378" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">⚡ Server Component</text>
+  </g>
+
+  <!-- Data stream arrows (server to browser) -->
+  <g filter="url(#glow)">
+    <!-- Arrow 1 -->
+    <line x1="222" y1="200" x2="360" y2="200" stroke="white" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <polygon points="360,195 370,200 360,205" fill="white"/>
+    <!-- Arrow 2 -->
+    <line x1="222" y1="250" x2="360" y2="250" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <polygon points="360,245 370,250 360,255" fill="#00ff88"/>
+    <!-- Arrow 3 -->
+    <line x1="222" y1="300" x2="360" y2="300" stroke="white" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <polygon points="360,295 370,300 360,305" fill="white"/>
+  </g>
+
+  <!-- Stream labels -->
+  <text x="285" y="194" font-family="Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" opacity="0.7">HTML Stream</text>
+  <text x="285" y="244" font-family="Arial, sans-serif" font-size="9" fill="#00ff88" text-anchor="middle" opacity="0.9">RSC Payload</text>
+  <text x="285" y="294" font-family="Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" opacity="0.7">Zero JS Bundle</text>
+
+  <!-- Browser window (right) -->
+  <rect x="370" y="120" width="260" height="280" rx="12" fill="#1a1a1a" stroke="#555" stroke-width="1.5"/>
+  <rect x="370" y="120" width="260" height="40" rx="12" fill="#222"/>
+  <rect x="370" y="148" width="260" height="12" fill="#222"/>
+  <circle cx="390" cy="140" r="6" fill="#ff5f57"/>
+  <circle cx="408" cy="140" r="6" fill="#febc2e"/>
+  <circle cx="426" cy="140" r="6" fill="#28c840"/>
+  <!-- URL bar -->
+  <rect x="440" y="132" width="170" height="16" rx="8" fill="#333"/>
+  <text x="525" y="144" font-family="monospace" font-size="8" fill="#aaa" text-anchor="middle">devfamz.com/app</text>
+  <!-- Browser content -->
+  <rect x="380" y="165" width="240" height="225" rx="4" fill="#0d0d0d"/>
+  <!-- Rendered page content -->
+  <rect x="390" y="175" width="220" height="20" rx="3" fill="#222"/>
+  <text x="500" y="189" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Next.js App</text>
+  <!-- Hero section -->
+  <rect x="390" y="202" width="220" height="60" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <rect x="398" y="210" width="120" height="8" rx="2" fill="#444"/>
+  <rect x="398" y="224" width="90" height="6" rx="2" fill="#333"/>
+  <rect x="398" y="237" width="60" height="14" rx="4" fill="white"/>
+  <text x="428" y="248" font-family="Arial, sans-serif" font-size="8" fill="black">Get Started</text>
+  <!-- Performance metrics -->
+  <rect x="390" y="272" width="100" height="45" rx="4" fill="#1a1a1a" stroke="#333"/>
+  <text x="440" y="286" font-family="Arial, sans-serif" font-size="7" fill="#00ff88" text-anchor="middle">Performance</text>
+  <rect x="398" y="292" width="84" height="5" rx="2" fill="#222"/>
+  <rect x="398" y="292" width="80" height="5" rx="2" fill="#00ff88"/>
+  <text x="440" y="309" font-family="Arial, sans-serif" font-size="7" fill="#aaa" text-anchor="middle">LCP: 0.8s ⚡</text>
+  <!-- SEO metrics -->
+  <rect x="500" y="272" width="100" height="45" rx="4" fill="#1a1a1a" stroke="#333"/>
+  <text x="550" y="286" font-family="Arial, sans-serif" font-size="7" fill="#4ec9b0" text-anchor="middle">SEO Score</text>
+  <rect x="508" y="292" width="84" height="5" rx="2" fill="#222"/>
+  <rect x="508" y="292" width="82" height="5" rx="2" fill="#4ec9b0"/>
+  <text x="550" y="309" font-family="Arial, sans-serif" font-size="7" fill="#aaa" text-anchor="middle">100 / 100 ✓</text>
+  <!-- Suspense loading -->
+  <rect x="390" y="325" width="210" height="50" rx="4" fill="#1a1a1a" stroke="#333"/>
+  <text x="490" y="340" font-family="monospace" font-size="8" fill="#4ec9b0" text-anchor="middle">&lt;Suspense fallback={&lt;Skeleton/&gt;}&gt;</text>
+  <text x="490" y="353" font-family="monospace" font-size="8" fill="#ce9178" text-anchor="middle">  &lt;AsyncComponent /&gt;</text>
+  <text x="490" y="366" font-family="monospace" font-size="8" fill="#4ec9b0" text-anchor="middle">&lt;/Suspense&gt;</text>
+
+  <!-- Right side features -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="white">
+    <rect x="650" y="140" width="140" height="250" rx="8" fill="#111" stroke="#333" stroke-width="1"/>
+    <text x="720" y="163" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Features</text>
+    <line x1="660" y1="170" x2="780" y2="170" stroke="#333"/>
+    <text x="663" y="189" font-size="9" fill="#00ff88">✓ Server Components</text>
+    <text x="663" y="207" font-size="9" fill="#00ff88">✓ App Router</text>
+    <text x="663" y="225" font-size="9" fill="#00ff88">✓ Streaming SSR</text>
+    <text x="663" y="243" font-size="9" fill="#00ff88">✓ ISR Support</text>
+    <text x="663" y="261" font-size="9" fill="#00ff88">✓ Edge Runtime</text>
+    <text x="663" y="279" font-size="9" fill="#00ff88">✓ Image Optim.</text>
+    <text x="663" y="297" font-size="9" fill="#00ff88">✓ Font Optim.</text>
+    <text x="663" y="315" font-size="9" fill="#00ff88">✓ Zero-JS RSC</text>
+    <text x="663" y="333" font-size="9" fill="#00ff88">✓ TypeScript</text>
+    <text x="663" y="351" font-size="9" fill="#00ff88">✓ PPR (Experimental)</text>
+    <line x1="660" y1="360" x2="780" y2="360" stroke="#333"/>
+    <text x="720" y="374" font-size="9" fill="#aaa" text-anchor="middle">Next.js 14</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="435" width="800" height="65" fill="#000" opacity="0.9"/>
+  <text x="400" y="463" font-family="Arial Black, sans-serif" font-size="18" font-weight="900" fill="white" text-anchor="middle" filter="url(#glow)">Next.js 14 Server Components</text>
+  <text x="400" y="485" font-family="Arial, sans-serif" font-size="11" fill="#aaa" text-anchor="middle">Lightning-Fast · SEO-Optimized · Zero-Bundle RSC · Production Ready</text>
+</svg>

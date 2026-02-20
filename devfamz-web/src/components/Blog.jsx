@@ -4,6 +4,18 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, Tag, ArrowRight, Search, TrendingUp } from 'lucide-react';
 import { blogPosts, getCategories, getAllTags } from '../data/blogData';
 
+// Map blog post 'image' field to real SVG file paths
+const blogImageMap = {
+    'ai-future': '/blog/ai-future.svg',
+    'flutter-react': '/blog/flutter-react.svg',
+    'nextjs': '/blog/nextjs.svg',
+    'kubernetes': '/blog/kubernetes.svg',
+    'serverless': '/blog/serverless.svg',
+    'web3': '/blog/web3.svg',
+};
+
+const getBlogImage = (imageKey) => blogImageMap[imageKey] || null;
+
 const Blog = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
@@ -52,7 +64,16 @@ const Blog = () => {
                                 <div className="grid md:grid-cols-2 gap-0">
                                     {/* Image Side */}
                                     <div className="relative h-[400px] md:h-auto overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-700" />
+                                        {getBlogImage(featuredPost.image) ? (
+                                            <img
+                                                src={getBlogImage(featuredPost.image)}
+                                                alt={featuredPost.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                style={{ minHeight: '300px' }}
+                                            />
+                                        ) : (
+                                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-700" />
+                                        )}
                                         <div className="absolute top-4 left-4 z-10">
                                             <span className="flex items-center gap-2 bg-primary text-black px-4 py-2 rounded-full text-sm font-bold">
                                                 <TrendingUp size={16} />
@@ -160,11 +181,20 @@ const Blog = () => {
                         >
                             <Link to={`/blog/${post.slug}`}>
                                 <div className="group h-full bg-surface/30 backdrop-blur-sm border border-border/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 flex flex-col">
-                                    {/* Image Placeholder */}
-                                    <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                                        <div className="absolute bottom-4 left-4 right-4">
-                                            <span className="inline-block px-3 py-1 bg-primary/90 text-black rounded-full text-xs font-bold backdrop-blur-sm">
+                                    {/* Blog Post Image */}
+                                    <div className="relative h-52 overflow-hidden bg-surface/50">
+                                        {getBlogImage(post.image) ? (
+                                            <img
+                                                src={getBlogImage(post.image)}
+                                                alt={post.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                            />
+                                        ) : (
+                                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
+                                        )}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                                        <div className="absolute bottom-3 left-3 right-3">
+                                            <span className="inline-block px-3 py-1 bg-primary/90 text-black rounded-full text-xs font-bold backdrop-blur-sm shadow-lg">
                                                 {post.category}
                                             </span>
                                         </div>

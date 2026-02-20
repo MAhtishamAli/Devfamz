@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#040d1a"/>
+      <stop offset="100%" stop-color="#020810"/>
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#326ce5" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#326ce5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7b3fe4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7b3fe4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigglow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="connGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#326ce5" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#326ce5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#326ce5" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <circle cx="400" cy="250" r="250" fill="url(#blueGlow)" opacity="0.6"/>
+  <circle cx="150" cy="150" r="100" fill="url(#purpleGlow)" opacity="0.5"/>
+  <circle cx="650" cy="350" r="100" fill="url(#purpleGlow)" opacity="0.5"/>
+
+  <!-- Star field -->
+  <g fill="white">
+    <circle cx="50" cy="40" r="1.2" opacity="0.5"/>
+    <circle cx="120" cy="80" r="0.8" opacity="0.4"/>
+    <circle cx="750" cy="50" r="1" opacity="0.5"/>
+    <circle cx="780" cy="120" r="0.8" opacity="0.4"/>
+    <circle cx="20" cy="350" r="1.2" opacity="0.5"/>
+    <circle cx="730" cy="400" r="1" opacity="0.4"/>
+    <circle cx="760" cy="470" r="1.5" opacity="0.3"/>
+    <circle cx="30" cy="470" r="1" opacity="0.3"/>
+    <circle cx="690" cy="80" r="0.8" opacity="0.5"/>
+  </g>
+
+  <!-- Kubernetes logo (helm wheel / steering wheel shape) center -->
+  <g transform="translate(400, 250)" filter="url(#bigglow)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#326ce5" stroke-width="4" opacity="0.9"/>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="18" fill="#326ce5" opacity="0.9"/>
+    <circle cx="0" cy="0" r="12" fill="#0d1a3a"/>
+    <!-- Spokes (7 spokes for K8s logo) -->
+    <line x1="0" y1="-18" x2="0" y2="-55" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="17" y1="-5" x2="50" y2="-14" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="17" y1="5" x2="50" y2="14" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="18" x2="0" y2="55" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-17" y1="5" x2="-50" y2="14" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-17" y1="-5" x2="-50" y2="-14" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+    <!-- 7th spoke (top-left diagonal) -->
+    <line x1="-10" y1="-15" x2="-30" y2="-47" stroke="#326ce5" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Connection lines from center to pods -->
+  <g filter="url(#softglow)" opacity="0.7">
+    <!-- Top pod -->
+    <line x1="400" y1="195" x2="400" y2="135" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Top-right pod -->
+    <line x1="440" y1="210" x2="530" y2="155" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Right pod -->
+    <line x1="455" y1="250" x2="580" y2="250" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Bottom-right pod -->
+    <line x1="440" y1="290" x2="530" y2="345" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Bottom pod -->
+    <line x1="400" y1="305" x2="400" y2="365" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Bottom-left pod -->
+    <line x1="360" y1="290" x2="270" y2="345" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Left pod -->
+    <line x1="345" y1="250" x2="220" y2="250" stroke="#326ce5" stroke-width="1.5"/>
+    <!-- Top-left pod -->
+    <line x1="360" y1="210" x2="270" y2="155" stroke="#326ce5" stroke-width="1.5"/>
+  </g>
+
+  <!-- Pod components (colored boxes) -->
+  <!-- Top pod -->
+  <g transform="translate(370, 90)" filter="url(#glow)">
+    <rect width="60" height="40" rx="6" fill="#1a2540" stroke="#326ce5" stroke-width="1.5"/>
+    <rect x="5" y="7" width="50" height="6" rx="2" fill="#326ce5" opacity="0.6"/>
+    <text x="30" y="32" font-family="monospace" font-size="7" fill="#7cb7ff" text-anchor="middle">api-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+  </g>
+
+  <!-- Top-right pod -->
+  <g transform="translate(500, 118)" filter="url(#glow)">
+    <rect width="65" height="40" rx="6" fill="#1a2540" stroke="#7b3fe4" stroke-width="1.5"/>
+    <rect x="5" y="7" width="55" height="6" rx="2" fill="#7b3fe4" opacity="0.6"/>
+    <text x="32" y="32" font-family="monospace" font-size="7" fill="#c4a0ff" text-anchor="middle">db-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+  </g>
+
+  <!-- Right pod -->
+  <g transform="translate(583, 225)" filter="url(#glow)">
+    <rect width="75" height="45" rx="6" fill="#1a2540" stroke="#326ce5" stroke-width="1.5"/>
+    <rect x="5" y="7" width="65" height="6" rx="2" fill="#326ce5" opacity="0.6"/>
+    <text x="37" y="32" font-family="monospace" font-size="7" fill="#7cb7ff" text-anchor="middle">cache-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+    <text x="37" y="42" font-family="monospace" font-size="6" fill="#5a8aff" text-anchor="middle">x3 replicas</text>
+  </g>
+
+  <!-- Bottom-right pod -->
+  <g transform="translate(503, 334)" filter="url(#glow)">
+    <rect width="65" height="40" rx="6" fill="#1a2540" stroke="#00cc88" stroke-width="1.5"/>
+    <rect x="5" y="7" width="55" height="6" rx="2" fill="#00cc88" opacity="0.6"/>
+    <text x="32" y="32" font-family="monospace" font-size="7" fill="#00ffaa" text-anchor="middle">worker-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+  </g>
+
+  <!-- Bottom pod -->
+  <g transform="translate(365, 370)" filter="url(#glow)">
+    <rect width="70" height="40" rx="6" fill="#1a2540" stroke="#326ce5" stroke-width="1.5"/>
+    <rect x="5" y="7" width="60" height="6" rx="2" fill="#326ce5" opacity="0.6"/>
+    <text x="35" y="32" font-family="monospace" font-size="7" fill="#7cb7ff" text-anchor="middle">ingress-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+  </g>
+
+  <!-- Bottom-left pod -->
+  <g transform="translate(198, 334)" filter="url(#glow)">
+    <rect width="70" height="40" rx="6" fill="#1a2540" stroke="#7b3fe4" stroke-width="1.5"/>
+    <rect x="5" y="7" width="60" height="6" rx="2" fill="#7b3fe4" opacity="0.6"/>
+    <text x="35" y="32" font-family="monospace" font-size="7" fill="#c4a0ff" text-anchor="middle">monitor-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#febc2e"/>
+  </g>
+
+  <!-- Left pod -->
+  <g transform="translate(130, 225)" filter="url(#glow)">
+    <rect width="75" height="45" rx="6" fill="#1a2540" stroke="#326ce5" stroke-width="1.5"/>
+    <rect x="5" y="7" width="65" height="6" rx="2" fill="#326ce5" opacity="0.6"/>
+    <text x="37" y="32" font-family="monospace" font-size="7" fill="#7cb7ff" text-anchor="middle">frontend-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+    <text x="37" y="42" font-family="monospace" font-size="6" fill="#5a8aff" text-anchor="middle">x5 replicas</text>
+  </g>
+
+  <!-- Top-left pod -->
+  <g transform="translate(198, 118)" filter="url(#glow)">
+    <rect width="70" height="40" rx="6" fill="#1a2540" stroke="#00cc88" stroke-width="1.5"/>
+    <rect x="5" y="7" width="60" height="6" rx="2" fill="#00cc88" opacity="0.6"/>
+    <text x="35" y="32" font-family="monospace" font-size="7" fill="#00ffaa" text-anchor="middle">auth-pod</text>
+    <circle cx="10" cy="10" r="3" fill="#28c840"/>
+  </g>
+
+  <!-- Namespace boundary circle -->
+  <circle cx="400" cy="250" r="195" fill="none" stroke="#326ce5" stroke-width="1" stroke-dasharray="8,5" opacity="0.3"/>
+  <text x="400" y="62" font-family="Arial, sans-serif" font-size="10" fill="#326ce5" text-anchor="middle" opacity="0.6">production namespace</text>
+
+  <!-- HPA indicator -->
+  <g transform="translate(680, 50)" filter="url(#softglow)">
+    <rect width="110" height="80" rx="8" fill="#0d1a3a" stroke="#326ce5" stroke-width="1"/>
+    <text x="55" y="18" font-family="Arial, sans-serif" font-size="9" fill="#7cb7ff" text-anchor="middle">AutoScaler (HPA)</text>
+    <line x1="10" y1="25" x2="100" y2="25" stroke="#326ce5" stroke-width="0.5" opacity="0.5"/>
+    <text x="55" y="40" font-family="monospace" font-size="8" fill="#00ffaa" text-anchor="middle">Min: 3 pods</text>
+    <text x="55" y="54" font-family="monospace" font-size="8" fill="#00ffaa" text-anchor="middle">Max: 50 pods</text>
+    <text x="55" y="68" font-family="monospace" font-size="8" fill="#febc2e" text-anchor="middle">CPU Threshold: 70%</text>
+  </g>
+
+  <!-- etcd indicator -->
+  <g transform="translate(10, 50)" filter="url(#softglow)">
+    <rect width="100" height="60" rx="8" fill="#0d1a3a" stroke="#7b3fe4" stroke-width="1"/>
+    <text x="50" y="18" font-family="Arial, sans-serif" font-size="9" fill="#c4a0ff" text-anchor="middle">etcd cluster</text>
+    <line x1="8" y1="24" x2="92" y2="24" stroke="#7b3fe4" stroke-width="0.5" opacity="0.5"/>
+    <text x="50" y="39" font-family="monospace" font-size="8" fill="#00ffaa" text-anchor="middle">HA: 3 nodes</text>
+    <text x="50" y="53" font-family="monospace" font-size="8" fill="#7cb7ff" text-anchor="middle">State Store</text>
+  </g>
+
+  <!-- Bottom info bar -->
+  <rect x="0" y="435" width="800" height="65" fill="#020810" opacity="0.95"/>
+  <text x="400" y="462" font-family="Arial Black, sans-serif" font-size="18" font-weight="900" fill="#326ce5" text-anchor="middle" filter="url(#glow)">Kubernetes Production 2026</text>
+  <text x="400" y="484" font-family="Arial, sans-serif" font-size="11" fill="#7cb7ff" text-anchor="middle">Container Orchestration · Auto-Scaling · GitOps · Multi-Region HA</text>
+</svg>

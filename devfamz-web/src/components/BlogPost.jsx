@@ -5,6 +5,18 @@ import { Calendar, Clock, Tag, ArrowLeft, Share2, BookOpen, TrendingUp } from 'l
 import { getPostBySlug, blogPosts } from '../data/blogData';
 import SEO from './SEO';
 
+// Map blog post 'image' field to real SVG file paths
+const blogImageMap = {
+    'ai-future': '/blog/ai-future.svg',
+    'flutter-react': '/blog/flutter-react.svg',
+    'nextjs': '/blog/nextjs.svg',
+    'kubernetes': '/blog/kubernetes.svg',
+    'serverless': '/blog/serverless.svg',
+    'web3': '/blog/web3.svg',
+};
+
+const getBlogImage = (imageKey) => blogImageMap[imageKey] || null;
+
 const BlogPost = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
@@ -117,13 +129,22 @@ const BlogPost = () => {
                         </button>
                     </div>
 
-                    {/* Featured Image Placeholder */}
-                    <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-12 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="text-center">
-                                <h2 className="text-3xl md:text-4xl font-bold text-foreground/80 mb-2">{post.category}</h2>
-                                <p className="text-muted">Featured Image</p>
-                            </div>
+                    {/* Featured Image */}
+                    <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-12">
+                        {getBlogImage(post.image) ? (
+                            <img
+                                src={getBlogImage(post.image)}
+                                alt={post.title}
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20" />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                        <div className="absolute bottom-8 left-8">
+                            <span className="px-4 py-2 bg-primary/90 text-black rounded-full text-sm font-bold backdrop-blur-sm">
+                                {post.category}
+                            </span>
                         </div>
                     </div>
 
@@ -201,7 +222,17 @@ const BlogPost = () => {
                                 >
                                     <div className="h-full bg-surface/30 backdrop-blur-sm border border-border/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500">
                                         {/* Image */}
-                                        <div className="relative h-40 bg-gradient-to-br from-primary/20 to-secondary/20">
+                                        <div className="relative h-44 overflow-hidden bg-surface/50">
+                                            {getBlogImage(relatedPost.image) ? (
+                                                <img
+                                                    src={getBlogImage(relatedPost.image)}
+                                                    alt={relatedPost.title}
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                />
+                                            ) : (
+                                                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
+                                            )}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                                             <div className="absolute bottom-3 left-3">
                                                 <span className="px-3 py-1 bg-primary/90 text-black rounded-full text-xs font-bold backdrop-blur-sm">
                                                     {relatedPost.category}

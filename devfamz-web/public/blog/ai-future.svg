@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0a1a"/>
+      <stop offset="100%" stop-color="#000510"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ffcc" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00ffcc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brainGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a1a4e"/>
+      <stop offset="100%" stop-color="#050520"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="nodeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffcc"/>
+      <stop offset="100%" stop-color="#00aa88"/>
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Ambient glow circles -->
+  <circle cx="400" cy="250" r="220" fill="url(#glowBlue)" opacity="0.3"/>
+  <circle cx="200" cy="150" r="120" fill="url(#glowCyan)" opacity="0.2"/>
+  <circle cx="600" cy="350" r="140" fill="url(#glowBlue)" opacity="0.15"/>
+
+  <!-- Fine grid background -->
+  <g opacity="0.06" stroke="#00d4ff" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="50" y1="0" x2="50" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="150" y1="0" x2="150" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="350" y1="0" x2="350" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="450" y1="0" x2="450" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="550" y1="0" x2="550" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="650" y1="0" x2="650" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+  </g>
+
+  <!-- Neural network connections (synapses) -->
+  <g filter="url(#glow)" opacity="0.7">
+    <!-- Layer 1 to Layer 2 connections -->
+    <line x1="110" y1="140" x2="240" y2="100" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="110" y1="140" x2="240" y2="180" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="110" y1="140" x2="240" y2="260" stroke="#0088ff" stroke-width="0.8"/>
+    <line x1="110" y1="250" x2="240" y2="100" stroke="#0088ff" stroke-width="0.8"/>
+    <line x1="110" y1="250" x2="240" y2="180" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="110" y1="250" x2="240" y2="260" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="110" y1="250" x2="240" y2="350" stroke="#0088ff" stroke-width="0.8"/>
+    <line x1="110" y1="360" x2="240" y2="180" stroke="#0088ff" stroke-width="0.8"/>
+    <line x1="110" y1="360" x2="240" y2="260" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="110" y1="360" x2="240" y2="350" stroke="#00d4ff" stroke-width="1"/>
+
+    <!-- Layer 2 to Layer 3 connections -->
+    <line x1="240" y1="100" x2="400" y2="80" stroke="#00ffcc" stroke-width="1"/>
+    <line x1="240" y1="100" x2="400" y2="180" stroke="#00ffcc" stroke-width="1"/>
+    <line x1="240" y1="100" x2="400" y2="280" stroke="#00aacc" stroke-width="0.8"/>
+    <line x1="240" y1="180" x2="400" y2="80" stroke="#00aacc" stroke-width="0.8"/>
+    <line x1="240" y1="180" x2="400" y2="180" stroke="#00ffcc" stroke-width="1.2"/>
+    <line x1="240" y1="180" x2="400" y2="280" stroke="#00ffcc" stroke-width="1"/>
+    <line x1="240" y1="180" x2="400" y2="380" stroke="#00aacc" stroke-width="0.8"/>
+    <line x1="240" y1="260" x2="400" y2="80" stroke="#00aacc" stroke-width="0.7"/>
+    <line x1="240" y1="260" x2="400" y2="180" stroke="#00ffcc" stroke-width="1"/>
+    <line x1="240" y1="260" x2="400" y2="280" stroke="#00ffcc" stroke-width="1.2"/>
+    <line x1="240" y1="260" x2="400" y2="380" stroke="#00ffcc" stroke-width="1"/>
+    <line x1="240" y1="350" x2="400" y2="180" stroke="#00aacc" stroke-width="0.7"/>
+    <line x1="240" y1="350" x2="400" y2="280" stroke="#00ffcc" stroke-width="1"/>
+    <line x1="240" y1="350" x2="400" y2="380" stroke="#00ffcc" stroke-width="1.2"/>
+
+    <!-- Layer 3 to Layer 4 connections -->
+    <line x1="400" y1="80" x2="560" y2="140" stroke="#aa00ff" stroke-width="1"/>
+    <line x1="400" y1="80" x2="560" y2="250" stroke="#8800cc" stroke-width="0.8"/>
+    <line x1="400" y1="180" x2="560" y2="140" stroke="#aa00ff" stroke-width="1.2"/>
+    <line x1="400" y1="180" x2="560" y2="250" stroke="#aa00ff" stroke-width="1"/>
+    <line x1="400" y1="180" x2="560" y2="360" stroke="#8800cc" stroke-width="0.8"/>
+    <line x1="400" y1="280" x2="560" y2="140" stroke="#8800cc" stroke-width="0.8"/>
+    <line x1="400" y1="280" x2="560" y2="250" stroke="#aa00ff" stroke-width="1.2"/>
+    <line x1="400" y1="280" x2="560" y2="360" stroke="#aa00ff" stroke-width="1"/>
+    <line x1="400" y1="380" x2="560" y2="250" stroke="#8800cc" stroke-width="0.8"/>
+    <line x1="400" y1="380" x2="560" y2="360" stroke="#aa00ff" stroke-width="1.2"/>
+
+    <!-- Layer 4 to Layer 5 connections -->
+    <line x1="560" y1="140" x2="690" y2="180" stroke="#ff6600" stroke-width="1"/>
+    <line x1="560" y1="140" x2="690" y2="320" stroke="#cc4400" stroke-width="0.8"/>
+    <line x1="560" y1="250" x2="690" y2="180" stroke="#ff6600" stroke-width="1.2"/>
+    <line x1="560" y1="250" x2="690" y2="320" stroke="#ff6600" stroke-width="1.2"/>
+    <line x1="560" y1="360" x2="690" y2="180" stroke="#cc4400" stroke-width="0.8"/>
+    <line x1="560" y1="360" x2="690" y2="320" stroke="#ff6600" stroke-width="1"/>
+  </g>
+
+  <!-- Neural nodes - Layer 1 (Input) -->
+  <g filter="url(#glow2)">
+    <circle cx="110" cy="140" r="12" fill="url(#nodeGrad1)" opacity="0.95"/>
+    <circle cx="110" cy="140" r="5" fill="white" opacity="0.9"/>
+    <circle cx="110" cy="250" r="12" fill="url(#nodeGrad1)" opacity="0.95"/>
+    <circle cx="110" cy="250" r="5" fill="white" opacity="0.9"/>
+    <circle cx="110" cy="360" r="12" fill="url(#nodeGrad1)" opacity="0.95"/>
+    <circle cx="110" cy="360" r="5" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Neural nodes - Layer 2 -->
+  <g filter="url(#glow2)">
+    <circle cx="240" cy="100" r="11" fill="url(#nodeGrad1)" opacity="0.9"/>
+    <circle cx="240" cy="100" r="4" fill="white" opacity="0.9"/>
+    <circle cx="240" cy="180" r="14" fill="url(#nodeGrad1)" opacity="1"/>
+    <circle cx="240" cy="180" r="6" fill="white" opacity="0.95"/>
+    <circle cx="240" cy="260" r="11" fill="url(#nodeGrad1)" opacity="0.9"/>
+    <circle cx="240" cy="260" r="4" fill="white" opacity="0.9"/>
+    <circle cx="240" cy="350" r="10" fill="url(#nodeGrad1)" opacity="0.85"/>
+    <circle cx="240" cy="350" r="4" fill="white" opacity="0.85"/>
+  </g>
+
+  <!-- Neural nodes - Layer 3 (Hidden, largest - center brain) -->
+  <g filter="url(#glow2)">
+    <circle cx="400" cy="80" r="16" fill="url(#nodeGrad2)" opacity="1"/>
+    <circle cx="400" cy="80" r="7" fill="white" opacity="0.95"/>
+    <circle cx="400" cy="180" r="22" fill="url(#nodeGrad2)" opacity="1"/>
+    <circle cx="400" cy="180" r="10" fill="white" opacity="0.95"/>
+    <circle cx="400" cy="280" r="22" fill="url(#nodeGrad2)" opacity="1"/>
+    <circle cx="400" cy="280" r="10" fill="white" opacity="0.95"/>
+    <circle cx="400" cy="380" r="16" fill="url(#nodeGrad2)" opacity="1"/>
+    <circle cx="400" cy="380" r="7" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- Neural nodes - Layer 4 -->
+  <g filter="url(#glow2)">
+    <circle cx="560" cy="140" r="13" fill="#aa00ff" opacity="0.95"/>
+    <circle cx="560" cy="140" r="5" fill="white" opacity="0.9"/>
+    <circle cx="560" cy="250" r="16" fill="#aa00ff" opacity="1"/>
+    <circle cx="560" cy="250" r="7" fill="white" opacity="0.95"/>
+    <circle cx="560" cy="360" r="13" fill="#aa00ff" opacity="0.95"/>
+    <circle cx="560" cy="360" r="5" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Neural nodes - Layer 5 (Output) -->
+  <g filter="url(#glow2)">
+    <circle cx="690" cy="180" r="14" fill="#ff6600" opacity="1"/>
+    <circle cx="690" cy="180" r="6" fill="white" opacity="0.95"/>
+    <circle cx="690" cy="320" r="14" fill="#ff6600" opacity="1"/>
+    <circle cx="690" cy="320" r="6" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- Floating data particles -->
+  <g filter="url(#softglow)" opacity="0.8">
+    <circle cx="170" cy="200" r="3" fill="#00d4ff"/>
+    <circle cx="320" cy="130" r="2" fill="#00ffcc"/>
+    <circle cx="480" cy="230" r="3" fill="#aa00ff"/>
+    <circle cx="620" cy="195" r="2" fill="#ff6600"/>
+    <circle cx="155" cy="300" r="2" fill="#00d4ff"/>
+    <circle cx="460" cy="340" r="2.5" fill="#00ffcc"/>
+    <circle cx="630" cy="290" r="2" fill="#aa00ff"/>
+    <circle cx="340" cy="420" r="2" fill="#00d4ff"/>
+    <circle cx="500" cy="440" r="1.5" fill="#00ffcc"/>
+    <circle cx="720" cy="140" r="2" fill="#ff6600"/>
+    <circle cx="80" cy="420" r="2" fill="#00d4ff"/>
+    <circle cx="200" cy="450" r="1.5" fill="#00ffcc"/>
+  </g>
+
+  <!-- Floating holographic hexagons -->
+  <g opacity="0.25" stroke="#00d4ff" stroke-width="1" fill="none">
+    <polygon points="730,50 755,65 755,95 730,110 705,95 705,65" />
+    <polygon points="50,420 70,432 70,456 50,468 30,456 30,432" />
+    <polygon points="750,400 768,411 768,432 750,443 732,432 732,411" />
+    <polygon points="30,80 48,91 48,112 30,123 12,112 12,91" />
+    <polygon points="400,15 418,26 418,47 400,58 382,47 382,26" />
+    <polygon points="400,450 418,461 418,482 400,493 382,482 382,461" />
+  </g>
+
+  <!-- Binary code floating particles -->
+  <g font-family="monospace" font-size="10" fill="#00d4ff" opacity="0.25">
+    <text x="30" y="200">01101</text>
+    <text x="700" y="80">11010</text>
+    <text x="680" y="460">00110</text>
+    <text x="30" y="460">10101</text>
+    <text x="355" y="450">01011</text>
+    <text x="355" y="30">11001</text>
+  </g>
+
+  <!-- Animated-look data stream lines -->
+  <g opacity="0.5">
+    <rect x="0" y="248" width="120" height="2" fill="url(#pulseGrad)"/>
+    <rect x="125" y="178" width="120" height="2" fill="url(#pulseGrad)"/>
+  </g>
+
+  <!-- AI Brain silhouette (abstract) in center -->
+  <g opacity="0.08" fill="#00d4ff">
+    <ellipse cx="400" cy="230" rx="110" ry="130"/>
+    <ellipse cx="350" cy="190" rx="50" ry="80"/>
+    <ellipse cx="450" cy="190" rx="50" ry="80"/>
+  </g>
+
+  <!-- Label tags -->
+  <g font-family="'Courier New', monospace" filter="url(#softglow)">
+    <text x="62" y="132" font-size="8" fill="#00d4ff" opacity="0.8">INPUT</text>
+    <text x="62" y="243" font-size="8" fill="#00d4ff" opacity="0.8">INPUT</text>
+    <text x="62" y="352" font-size="8" fill="#00d4ff" opacity="0.8">INPUT</text>
+    <text x="655" y="175" font-size="8" fill="#ff6600" opacity="0.8">OUTPUT</text>
+    <text x="655" y="315" font-size="8" fill="#ff6600" opacity="0.8">OUTPUT</text>
+  </g>
+
+  <!-- Title overlay at bottom -->
+  <rect x="0" y="420" width="800" height="80" fill="url(#bgGrad)" opacity="0.7"/>
+  <text x="400" y="458" font-family="'Arial', sans-serif" font-size="22" font-weight="bold" fill="#00d4ff" text-anchor="middle" filter="url(#glow)">AGENTIC AI SYSTEMS</text>
+  <text x="400" y="480" font-family="'Arial', sans-serif" font-size="12" fill="#00ffcc" text-anchor="middle" opacity="0.8">Neural Networks · Multi-Modal AI · LLMs · 2026</text>
+</svg>

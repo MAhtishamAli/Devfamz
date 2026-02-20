@@ -129,11 +129,13 @@ const Navbar = () => {
             <div className="container mx-auto px-6 flex justify-between items-center relative">
 
                 {/* 1. LEFT: Logo */}
-                <Link to="/" className={`text-2xl font-bold font-sans tracking-tight flex items-center gap-2 group transition-colors duration-300 z-50`}>
-                    <span className="w-8 h-8 bg-primary/20 rounded flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors border border-primary/20">
-                        <Terminal size={18} />
-                    </span>
-                    <span className={`${logoColorClass} transition-colors duration-300`}>dev<span className="text-primary">famz</span></span>
+                <Link to="/" className={`flex items-center gap-2 group transition-all duration-300 z-50`}>
+                    <img
+                        src="/devfamz-logo.png"
+                        alt="DevFamz Logo"
+                        className="h-10 w-10 object-contain drop-shadow-[0_0_8px_rgba(0,232,255,0.4)] group-hover:drop-shadow-[0_0_14px_rgba(0,232,255,0.7)] transition-all duration-300 group-hover:scale-110"
+                    />
+                    <span className={`text-2xl font-bold font-sans tracking-tight ${logoColorClass} transition-colors duration-300`}>dev<span className="text-primary">famz</span></span>
                 </Link>
 
                 {/* 2. CENTER: Navigation Links (Absolute Center) */}
