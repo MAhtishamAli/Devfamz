@@ -59,9 +59,9 @@ const ProductsPage = () => {
                         className="flex flex-wrap justify-center gap-8 mt-14"
                     >
                         {[
-                            { icon: Trophy, label: "Products Shipped", value: "5+" },
-                            { icon: Users, label: "Users Impacted", value: "10K+" },
-                            { icon: Rocket, label: "Industries Served", value: "6+" },
+                            { icon: Trophy, label: "Projects Completed", value: "50+" },
+                            { icon: Users, label: "Happy Customers", value: "35+" },
+                            { icon: Rocket, label: "Years Experience", value: "12+" },
                         ].map((stat, idx) => (
                             <div key={idx} className="flex items-center gap-3 px-6 py-3 bg-surface/50 border border-border/10 rounded-xl">
                                 <stat.icon size={20} className="text-primary" />

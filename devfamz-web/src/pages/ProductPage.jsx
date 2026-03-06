@@ -57,7 +57,7 @@ const ProductPage = () => {
                             <div className="flex items-center gap-2">
                                 <Zap className="text-primary" size={24} />
                                 <div>
-                                    <div className="text-sm text-muted">Projects Delivered</div>
+                                    <div className="text-sm text-muted">Projects Completed</div>
                                     <div className="text-2xl font-bold text-foreground">{product.projectsShipped}</div>
                                 </div>
                             </div>

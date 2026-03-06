@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, CheckCircle2, Zap, ArrowRight, ShieldCheck, Cpu, Code } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Zap, ArrowRight, ShieldCheck, Cpu, Code, Star } from 'lucide-react';
 import { getServiceData } from '../data/serviceDetails';
 import Section from '../components/ui/Section';
 
@@ -10,6 +10,49 @@ import SEO from '../components/SEO';
 const ServicePage = () => {
     const { id } = useParams();
     const data = getServiceData(id);
+    const [isAnnual, setIsAnnual] = useState(true);
+
+    const subscriptionPlans = [
+        {
+            name: "Basic",
+            price: isAnnual ? "$480" : "$600",
+            period: "/month",
+            desc: "Essential tools and features for starting your journey with ease.",
+            features: [
+                "Basic workflow automation",
+                "Ideal for small projects or MVPs",
+                "Core features development with a quick turnaround to validate your idea",
+                "Flexible pricing on a per-project basis",
+                "1 consultation a month"
+            ]
+        },
+        {
+            name: "Professional",
+            price: isAnnual ? "$1200" : "$960",
+            period: "/month",
+            desc: "Advanced capabilities designed to meet growing business needs.",
+            features: [
+                "Advance workflow automation",
+                "Perfect for growing businesses and mid-sized projects",
+                "Covers end-to-end development",
+                "Engagement can be fixed-price or monthly retainer",
+                "2 consultation a month"
+            ]
+        },
+        {
+            name: "Enterprises",
+            price: "Custom",
+            period: "",
+            desc: "Comprehensive solutions tailored for large-scale business success.",
+            features: [
+                "Custom workflow automation",
+                "Solutions for large-scale",
+                "dedicated team, advanced integrations",
+                "24hr priority support",
+                "Unlimited consultation a month"
+            ]
+        }
+    ];
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -121,13 +164,30 @@ const ServicePage = () => {
 
             {/* Specific Pricing Section */}
             <Section id="pricing">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-extrabold mb-4">Deployment Packages</h2>
+                <div className="text-center mb-8">
+                    <h2 className="text-3xl font-extrabold mb-4 text-foreground">Deployment Packages</h2>
                     <p className="text-muted text-lg">Transparent pricing for every stage of growth.</p>
                 </div>
 
+                <div className="flex justify-center mb-12">
+                    <div className="bg-surface/30 p-1 flex rounded-lg">
+                        <button
+                            className={`px-8 py-2.5 rounded text-sm font-bold transition-all ${isAnnual ? 'bg-primary text-black' : 'text-muted hover:text-foreground'}`}
+                            onClick={() => setIsAnnual(true)}
+                        >
+                            Annually
+                        </button>
+                        <button
+                            className={`px-8 py-2.5 rounded text-sm font-bold transition-all ${!isAnnual ? 'bg-primary text-black' : 'text-muted hover:text-foreground'}`}
+                            onClick={() => setIsAnnual(false)}
+                        >
+                            Monthly
+                        </button>
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {(data.pricing || []).map((plan, idx) => (
+                    {subscriptionPlans.map((plan, idx) => (
                         <div
                             key={idx}
                             className={`p-8 rounded-2xl border flex flex-col relative ${idx === 1 ? 'border-primary bg-primary/5 shadow-2xl shadow-primary/10 transform md:-translate-y-4' : 'border-border/20 bg-background hover:border-primary/30'} transition-all`}
@@ -137,27 +197,40 @@ const ServicePage = () => {
                                     Most Popular
                                 </span>
                             )}
-                            <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                            <div className="text-3xl font-black mb-1">{plan.price}</div>
-                            {plan.desc && <p className="text-sm text-muted mb-6">{plan.desc}</p>}
+                            <div className="mb-4 flex items-center gap-3">
+                                <div className={`p-2 rounded border ${idx === 1 ? 'bg-primary text-black border-primary' : 'bg-surface/50 text-foreground border-border/10'}`}>
+                                    <Star size={14} className={idx === 1 ? 'fill-black text-black' : 'fill-foreground text-foreground'} />
+                                </div>
+                                <h3 className={`text-lg font-bold ${idx === 1 ? 'text-primary' : 'text-foreground'}`}>{plan.name}</h3>
+                            </div>
 
-                            <hr className="border-border/10 mb-6" />
+                            <div className="flex items-end gap-1 mb-4">
+                                <div className="text-4xl font-black text-foreground tracking-tight">{plan.price}</div>
+                                {plan.period && <div className="text-muted text-sm pb-1 font-mono">{plan.period}</div>}
+                            </div>
+
+                            <p className="text-sm text-muted mb-8 min-h-[40px] leading-relaxed">
+                                {plan.desc}
+                            </p>
 
                             <ul className="space-y-4 flex-1 mb-8">
-                                {(plan.features || []).map((feat, fIdx) => (
-                                    <li key={fIdx} className="flex items-start gap-3 text-sm font-medium">
-                                        <CheckCircle2 size={16} className={`mt-0.5 shrink-0 ${idx === 1 ? 'text-primary' : 'text-muted'}`} />
-                                        <span>{feat}</span>
+                                {plan.features.map((feat, fIdx) => (
+                                    <li key={fIdx} className="flex items-start gap-3">
+                                        <div className={`mt-0.5 shrink-0 rounded-full flex items-center justify-center h-5 w-5 ${idx === 1 ? 'bg-primary text-black' : 'bg-surface border border-border/10 text-muted'}`}>
+                                            <CheckCircle2 size={12} className={idx === 1 ? 'fill-transparent' : 'fill-transparent opacity-70'} />
+                                        </div>
+                                        <span className="text-muted text-sm leading-relaxed font-medium">{feat}</span>
                                     </li>
                                 ))}
                             </ul>
 
                             <Link
                                 to="/contact"
-                                className={`w-full py-3 rounded-lg font-bold text-center transition-all ${idx === 1 ? 'bg-primary text-black hover:bg-primary/90' : 'bg-surface hover:bg-surface/80 border border-border/10'}`}
+                                className={`w-full py-4 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 ${idx === 1 ? 'bg-primary text-black hover:bg-primary/90 shadow-lg shadow-primary/20' : 'bg-surface hover:bg-surface/80 border border-border/10 text-foreground'}`}
                             >
-                                Choose {plan.name}
+                                Go with this plan <ArrowRight size={16} />
                             </Link>
+
                         </div>
                     ))}
                 </div>
