@@ -180,12 +180,6 @@ const ServicePage = () => {
                         >
                             Start Project Now <ArrowRight size={20} />
                         </Link>
-                        <Link
-                            to="/services"
-                            className="px-8 py-4 bg-white/20 hover:bg-white/30 text-black rounded-lg font-bold transition-colors backdrop-blur-sm"
-                        >
-                            Explore Other Services
-                        </Link>
                     </div>
                 </div>
             </section>

@@ -5,7 +5,6 @@ import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import Home from './pages/Home';
-import ServicesPage from './pages/ServicesPage';
 import ServicePage from './pages/ServicePage'; // Dynamic Detail Page
 import ProductPage from './pages/ProductPage'; // Dynamic Product Page
 import ProductsPage from './pages/ProductsPage'; // Products Listing Page
@@ -27,7 +26,6 @@ function App() {
         <div className="min-h-screen flex flex-col">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:id" element={<ServicePage />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:id" element={<ProductPage />} />

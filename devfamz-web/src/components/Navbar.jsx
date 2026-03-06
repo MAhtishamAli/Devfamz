@@ -184,7 +184,7 @@ const Navbar = () => {
                                                         className={`p-3 rounded-lg cursor-pointer transition-all flex items-center gap-3 group/item relative ${activeService === idx ? 'bg-primary/10 text-primary' : 'text-muted hover:text-foreground hover:bg-surface'}`}
                                                     >
                                                         <CategoryIcon size={18} className={activeService === idx ? "text-primary" : "text-muted group-hover/item:text-foreground"} />
-                                                        <Link to={service.path} className="text-sm font-bold flex-1">{service.category}</Link>
+                                                        <span className="text-sm font-bold flex-1">{service.category}</span>
 
                                                         {/* Active Indicator Line */}
                                                         {activeService === idx && (
@@ -339,7 +339,7 @@ const Navbar = () => {
                                                     <div key={idx} className="mb-4 last:mb-0">
                                                         <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2">
                                                             <CategoryIcon size={14} />
-                                                            <Link to={service.path} onClick={() => setIsOpen(false)}>{service.category}</Link>
+                                                            <span>{service.category}</span>
                                                         </h4>
                                                         <ul className="space-y-2 pl-2 border-l border-border/10">
                                                             {service.items.map((item, sIdx) => (
