@@ -1,172 +1,218 @@
 
 export const productDetails = {
-    "ai-automation-suite": {
-        title: "AI Automation Suite",
-        tagline: "Intelligent Automation at Scale.",
-        intro: "A comprehensive AI-powered automation platform that streamlines business workflows, reduces manual tasks by 80%, and integrates seamlessly with existing tools.",
-        projectsShipped: "120+",
-        detailedDescription: "Our AI Automation Suite combines machine learning, natural language processing, and robotic process automation to transform how businesses operate. Built on a microservices architecture, it scales effortlessly from small teams to enterprise deployments. The platform learns from user behavior, optimizes workflows automatically, and provides actionable insights through real-time analytics dashboards.",
-        imageKeyword: "artificial intelligence automation",
+    "dentai": {
+        title: "DentAI",
+        tagline: "AI-Powered Receptionist for Dental Clinics.",
+        intro: "DentAI enhances dental clinics with an intelligent AI receptionist that handles patient calls, schedules appointments, and manages inquiries 24/7 — so clinics can focus on providing exceptional dental care.",
+        projectsShipped: "50+",
+        liveUrl: "https://www.dentai.ai/",
+        screenshot: "/projects/dentai.png",
+        category: "AI / Healthcare SaaS",
+        year: "2024",
+        detailedDescription: "DentAI is a comprehensive AI-powered receptionist platform specifically designed for dental practices. It seamlessly integrates with leading Practice Management Software (PMS) systems including Dentrix, OpenDental, EagleSoft, and more. The platform features smart call handling, multilingual support in 20+ languages, intelligent scheduling logic with block scheduling and staggered appointments, and the ability to significantly increase clinic revenue by capturing after-hours bookings and reducing no-shows with automated reminders.",
+        imageKeyword: "ai dental receptionist",
         features: [
-            "Workflow Designer with drag-and-drop interface",
-            "Pre-built connectors for 200+ SaaS platforms",
-            "Natural Language Processing for document analysis",
-            "Custom ML model training and deployment",
-            "Real-time analytics and performance monitoring",
-            "Enterprise-grade security and compliance (SOC2, HIPAA)"
+            "Smart AI-powered call handling for patient inquiries",
+            "Seamless integration with major PMS platforms (Dentrix, OpenDental, etc.)",
+            "Multilingual support for 20+ languages",
+            "Intelligent scheduling logic with flexible appointment management",
+            "24/7 automated receptionist available around the clock",
+            "Automated reminders to reduce no-shows and boost revenue"
         ],
         useCases: [
-            { title: "Customer Support", desc: "Automate ticket routing, sentiment analysis, and response suggestions using AI." },
-            { title: "Data Processing", desc: "Extract, transform, and analyze data from multiple sources automatically." },
-            { title: "Marketing Automation", desc: "Personalize campaigns based on behavior patterns and predictive analytics." },
-            { title: "HR Operations", desc: "Streamline recruitment, onboarding, and performance review workflows." }
+            { title: "After-Hours Booking", desc: "Never miss an appointment — capture bookings and inquiries even when the office is closed." },
+            { title: "Patient Call Management", desc: "Handle patient requests from scheduling appointments to leaving urgent messages for staff." },
+            { title: "Multi-Language Support", desc: "Communicate with diverse patient populations in their preferred language." },
+            { title: "Revenue Optimization", desc: "Maximize schedule efficiency and reduce no-shows with automated workflows." }
         ],
-        techStack: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Redis", "Kubernetes"],
-        pricing: [
-            { name: "Starter", price: "$499/mo", features: ["Up to 10 workflows", "50k operations/month", "Basic integrations", "Email support"] },
-            { name: "Professional", price: "$1,499/mo", features: ["Unlimited workflows", "500k operations/month", "Advanced ML features", "Priority support"] },
-            { name: "Enterprise", price: "Custom", features: ["On-premise deployment", "Custom ML models", "Dedicated support", "SLA guarantee"] }
-        ]
+        techStack: ["Next.js", "Python", "OpenAI", "Twilio", "PostgreSQL", "Vercel"],
+        testimonial: {
+            quote: "DentAI has transformed how we handle patient calls. Our staff can focus on in-office patients while the AI manages phone inquiries flawlessly.",
+            author: "Dental Clinic Director"
+        }
     },
-    "cloud-dashboard-pro": {
-        title: "Cloud Dashboard Pro",
-        tagline: "Unified Cloud Visibility.",
-        intro: "A centralized monitoring and management platform for multi-cloud environments. Monitor AWS, Azure, and GCP from a single pane of glass.",
-        projectsShipped: "95+",
-        detailedDescription: "Cloud Dashboard Pro provides real-time visibility into your entire cloud infrastructure. With AI-powered cost optimization, security threat detection, and performance analytics, teams can reduce cloud spending by 40% while improving reliability. The platform aggregates metrics from all major cloud providers and presents them in customizable, role-based dashboards.",
-        imageKeyword: "cloud dashboard monitoring",
+    "chatbase": {
+        title: "Chatbase",
+        tagline: "AI Agents for Magical Customer Experiences.",
+        intro: "Chatbase is the complete platform for building and deploying AI support agents that transform customer interactions. Build customer service chatbots that deliver better, faster, and more personalized experiences at scale.",
+        projectsShipped: "200+",
+        liveUrl: "https://www.chatbase.co/",
+        screenshot: "/projects/chatbase.png",
+        category: "AI / Customer Experience",
+        year: "2024",
+        detailedDescription: "Chatbase provides an end-to-end solution for conversational AI, purpose-built for LLMs and designed for simplicity while being engineered for enterprise-grade security. The platform enables businesses to sync with real-time data, take actions on existing systems, compare multiple AI models, implement smart escalation workflows, and access advanced reporting capabilities. It works across multiple channels with secure integrations, enterprise quality guardrails, and multilingual support — handling even unclear requests with precision.",
+        imageKeyword: "ai chatbot platform",
         features: [
-            "Multi-cloud resource inventory and tagging",
-            "AI-driven cost anomaly detection and recommendations",
-            "Security posture management and compliance reporting",
-            "Performance monitoring with predictive alerting",
-            "Automated resource rightsizing and cleanup",
-            "Custom reporting and data export capabilities"
+            "Purpose-built for LLMs with advanced AI model comparison",
+            "Real-time data sync and system action capabilities",
+            "Smart escalation to human agents when needed",
+            "Multi-channel deployment (web, mobile, API, whitelabel)",
+            "Enterprise-grade security with data encryption",
+            "Advanced analytics and reporting dashboard"
         ],
         useCases: [
-            { title: "Cost Optimization", desc: "Identify idle resources, optimize instance types, and forecast spending." },
-            { title: "Security Compliance", desc: "Continuous monitoring for misconfigurations and compliance violations." },
-            { title: "Performance Management", desc: "Track application performance metrics across cloud providers." },
-            { title: "Resource Governance", desc: "Enforce tagging policies and budget controls across teams." }
+            { title: "Customer Support Automation", desc: "Resolve customer queries instantly with AI agents that learn from your knowledge base." },
+            { title: "Lead Qualification", desc: "Automatically qualify leads through intelligent conversation flows before human handoff." },
+            { title: "Multi-Channel Deployment", desc: "Deploy consistent AI agents across web, mobile, Slack, and other platforms." },
+            { title: "Enterprise Integration", desc: "Connect to CRM, helpdesk, and other tools for seamless workflow automation." }
         ],
-        techStack: ["React", "Node.js", "GraphQL", "TimescaleDB", "Elasticsearch", "Docker"],
-        pricing: [
-            { name: "Team", price: "$299/mo", features: ["Up to 500 resources", "3 cloud accounts", "7-day data retention", "Standard dashboards"] },
-            { name: "Business", price: "$899/mo", features: ["Unlimited resources", "Unlimited accounts", "90-day retention", "Custom dashboards"] },
-            { name: "Enterprise", price: "Custom", features: ["365-day retention", "API access", "White-label", "On-premise option"] }
-        ]
+        techStack: ["React", "Node.js", "OpenAI", "LangChain", "PostgreSQL", "AWS"],
+        testimonial: {
+            quote: "Chatbase helped us reduce support ticket volume by 60% while maintaining customer satisfaction scores above 95%.",
+            author: "Head of Customer Experience"
+        }
     },
-    "blockchain-identity-system": {
-        title: "Blockchain Identity System",
-        tagline: "Decentralized Trust.",
-        intro: "A self-sovereign identity platform built on blockchain technology. Users control their own data while organizations verify credentials instantly and securely.",
-        projectsShipped: "45+",
-        detailedDescription: "Our Blockchain Identity System leverages distributed ledger technology to create tamper-proof digital identities. Unlike traditional systems, users maintain complete control over their personal data, sharing only what's necessary through cryptographic proofs. Organizations benefit from instant verification, reduced fraud, and compliance with privacy regulations like GDPR.",
-        imageKeyword: "blockchain security identity",
-        features: [
-            "Self-sovereign identity wallets for users",
-            "Zero-knowledge proof verification",
-            "Credential issuance and revocation management",
-            "Multi-chain support (Ethereum, Hyperledger)",
-            "Biometric authentication integration",
-            "Developer-friendly API and SDKs"
-        ],
-        useCases: [
-            { title: "Educational Credentials", desc: "Universities issue verifiable diplomas that employers can instantly validate." },
-            { title: "Healthcare Records", desc: "Patients control medical records while enabling secure provider access." },
-            { title: "Financial KYC", desc: "Streamline customer onboarding with reusable identity verification." },
-            { title: "Supply Chain", desc: "Verify product authenticity and track provenance across partners." }
-        ],
-        techStack: ["Solidity", "Ethereum", "IPFS", "Web3.js", "Node.js", "MongoDB"],
-        pricing: [
-            { name: "Developer", price: "Free", features: ["Testnet access", "Up to 1000 identities", "Community support", "Basic SDK"] },
-            { name: "Growth", price: "$1,299/mo", features: ["Mainnet deployment", "50k identities", "Priority support", "Advanced features"] },
-            { name: "Enterprise", price: "Custom", features: ["Private blockchain", "Unlimited identities", "Custom integration", "SLA support"] }
-        ]
-    },
-    "iot-device-manager": {
-        title: "IoT Device Manager",
-        tagline: "Connect. Monitor. Control.",
-        intro: "An enterprise IoT platform for managing thousands of connected devices. Real-time monitoring, over-the-air updates, and predictive maintenance capabilities.",
-        projectsShipped: "78+",
-        detailedDescription: "IoT Device Manager provides end-to-end lifecycle management for connected devices at scale. From secure provisioning to decommissioning, the platform handles device registration, firmware updates, telemetry collection, and remote troubleshooting. Advanced analytics powered by machine learning detect anomalies and predict failures before they occur, reducing downtime by 60%.",
-        imageKeyword: "internet of things devices",
-        features: [
-            "Secure device provisioning with X.509 certificates",
-            "Over-the-air (OTA) firmware updates",
-            "Real-time telemetry and event streaming",
-            "Rule engine for automated actions",
-            "Predictive maintenance with ML models",
-            "Geographic device mapping and fleet insights"
-        ],
-        useCases: [
-            { title: "Smart Manufacturing", desc: "Monitor production equipment and predict maintenance needs." },
-            { title: "Fleet Management", desc: "Track vehicle location, performance, and driver behavior." },
-            { title: "Smart Buildings", desc: "Control HVAC, lighting, and security systems remotely." },
-            { title: "Agriculture", desc: "Monitor soil conditions and automate irrigation systems." }
-        ],
-        techStack: ["Go", "MQTT", "InfluxDB", "Grafana", "Kubernetes", "AWS IoT Core"],
-        pricing: [
-            { name: "Starter", price: "$199/mo", features: ["Up to 100 devices", "Basic monitoring", "Manual updates", "Email support"] },
-            { name: "Professional", price: "$799/mo", features: ["Up to 5000 devices", "Advanced analytics", "Automated OTA", "Phone support"] },
-            { name: "Enterprise", price: "Custom", features: ["Unlimited devices", "Custom ML models", "On-premise deployment", "24/7 support"] }
-        ]
-    },
-    "cms-headless-platform": {
-        title: "CMS Headless Platform",
-        tagline: "Content Without Boundaries.",
-        intro: "A modern headless CMS built for omnichannel content delivery. Manage content once, publish everywhere - web, mobile, IoT, and beyond.",
+    "aviso": {
+        title: "Aviso",
+        tagline: "End-to-End AI Revenue Platform.",
+        intro: "Aviso is the #1 AI Revenue Platform that helps sales teams win more deals with Revenue Intelligence, Conversational Intelligence, and agentic AI — delivering 98%+ forecast accuracy and saving up to 20 hours per rep weekly.",
         projectsShipped: "150+",
-        detailedDescription: "Our Headless CMS separates content management from presentation, giving teams ultimate flexibility. Marketing teams enjoy an intuitive editing experience with live previews, while developers consume content via GraphQL or REST APIs. Built-in localization, workflow management, and AI-powered content recommendations make it the perfect choice for global brands managing complex content operations.",
-        imageKeyword: "content management system interface",
+        liveUrl: "https://www.aviso.com/",
+        screenshot: "/projects/aviso.png",
+        category: "AI / Revenue Intelligence",
+        year: "2024",
+        detailedDescription: "Aviso is an AI-powered revenue command center that provides guidance for every revenue activity. The platform encompasses Conversation Intelligence for analyzing sales calls, Relationship Intelligence for mapping buyer networks, Coaching & Enablement for team performance, Marketing Intelligence for campaign optimization, Sales Engagement for outreach automation, Revenue Forecasting with 98%+ accuracy, Pipeline Inspection for deal health, and Deal Acceleration for faster close rates. Enterprise clients typically see 40%+ improvement in win rates and 70%+ better forecast accuracy.",
+        imageKeyword: "ai revenue intelligence platform",
         features: [
-            "Flexible content modeling with custom types",
-            "Real-time collaborative editing",
-            "Multi-language and localization support",
-            "Workflow and approval management",
-            "AI-powered content suggestions and SEO optimization",
-            "GraphQL and REST APIs with automatic documentation"
+            "Conversation Intelligence with AI-powered call analysis",
+            "Revenue Forecasting with 98%+ accuracy",
+            "Relationship Intelligence and buyer network mapping",
+            "Agentic AI saving 20+ hours per rep weekly",
+            "Pipeline Inspection and Deal Acceleration tools",
+            "Marketing Intelligence and campaign optimization"
         ],
         useCases: [
-            { title: "E-commerce", desc: "Manage product catalogs across web, mobile apps, and marketplaces." },
-            { title: "Media Publishing", desc: "Publish articles simultaneously to website, app, and social media." },
-            { title: "Corporate Communications", desc: "Centralize content for intranets, external sites, and employee apps." },
-            { title: "Education", desc: "Deliver course content across LMS, mobile apps, and kiosks." }
+            { title: "Sales Forecasting", desc: "Predict revenue outcomes with AI-driven accuracy, replacing spreadsheet guesswork." },
+            { title: "Deal Acceleration", desc: "Identify at-risk deals early and get AI recommendations to move them forward." },
+            { title: "Sales Coaching", desc: "Analyze sales calls to provide real-time coaching and improve rep performance." },
+            { title: "Pipeline Management", desc: "Get complete visibility into pipeline health with predictive analytics." }
         ],
-        techStack: ["Node.js", "GraphQL", "PostgreSQL", "Elasticsearch", "React", "Redis"],
-        pricing: [
-            { name: "Basic", price: "$99/mo", features: ["Up to 3 users", "10k entries", "5 content types", "Email support"] },
-            { name: "Professional", price: "$499/mo", features: ["Unlimited users", "100k entries", "Unlimited types", "Priority support"] },
-            { name: "Enterprise", price: "Custom", features: ["On-premise option", "Custom workflows", "Dedicated support", "SLA guarantee"] }
-        ]
+        techStack: ["React", "Python", "TensorFlow", "Snowflake", "AWS", "Kubernetes"],
+        testimonial: {
+            quote: "Aviso has fundamentally changed how we approach revenue planning. The AI-driven insights have improved our forecast accuracy by over 40%.",
+            author: "VP of Sales Operations"
+        }
     },
-    "cybersecurity-shield": {
-        title: "Cybersecurity Shield",
-        tagline: "Proactive Threat Defense.",
-        intro: "An AI-powered cybersecurity platform that detects, analyzes, and responds to threats in real-time. Protecting modern enterprises from evolving cyber attacks.",
-        projectsShipped: "62+",
-        detailedDescription: "Cybersecurity Shield uses advanced machine learning to identify anomalies and potential threats before they cause damage. The platform continuously monitors network traffic, user behavior, and system logs, correlating data from multiple sources to detect sophisticated attack patterns. Automated response capabilities neutralize threats within seconds, while detailed forensic tools help teams investigate and prevent future incidents.",
-        imageKeyword: "cybersecurity network protection",
+    "evant": {
+        title: "Evant",
+        tagline: "SMS & Text to RSVP — Boost Event Attendance.",
+        intro: "Evant is the best way to optimize event attendance using SMS community engagement software. Leaders of non-profits, universities, and community organizations use Evant to level-up their event attendance through smart text-to-RSVP technology.",
+        projectsShipped: "80+",
+        liveUrl: "https://www.evant.app/",
+        screenshot: "/projects/evant.png",
+        category: "SaaS / Community Engagement",
+        year: "2024",
+        detailedDescription: "Evant revolutionizes event management with its SMS-first approach to RSVPs and community engagement. The platform makes getting RSVPs incredibly simple through text messaging, eliminating barriers to entry for attendees. With deep engagement insights, organizers can understand their audience better, optimize event timing and messaging, and dramatically improve attendance rates. The platform serves non-profits, universities, religious organizations, and community groups with tiered pricing plans designed for organizations of all sizes.",
+        imageKeyword: "event management sms platform",
         features: [
-            "Real-time threat detection with ML models",
-            "Behavioral analysis for insider threat detection",
-            "Automated incident response and containment",
-            "Vulnerability assessment and patch management",
-            "Compliance reporting (PCI-DSS, HIPAA, SOC2)",
-            "Security orchestration and automation (SOAR)"
+            "Text-to-RSVP technology for frictionless event signups",
+            "SMS community engagement and broadcast messaging",
+            "Deep engagement analytics and attendance insights",
+            "Automated event reminders and follow-ups",
+            "Scalable pricing for organizations of all sizes",
+            "Community management and audience segmentation"
         ],
         useCases: [
-            { title: "Financial Services", desc: "Detect fraud, protect customer data, and ensure regulatory compliance." },
-            { title: "Healthcare", desc: "Safeguard patient records and meet HIPAA requirements." },
-            { title: "E-commerce", desc: "Prevent payment fraud and protect customer information." },
-            { title: "SaaS Platforms", desc: "Monitor multi-tenant environments and respond to threats instantly." }
+            { title: "Non-Profit Events", desc: "Boost attendance at fundraisers, volunteer events, and community gatherings." },
+            { title: "University Events", desc: "Drive student engagement for campus events, orientations, and club activities." },
+            { title: "Community Organizations", desc: "Simplify RSVP management for churches, civic groups, and neighborhood events." },
+            { title: "Corporate Events", desc: "Streamline employee event management and internal communication." }
         ],
-        techStack: ["Python", "TensorFlow", "Apache Kafka", "Elasticsearch", "Splunk", "Docker"],
-        pricing: [
-            { name: "SMB", price: "$599/mo", features: ["Up to 100 endpoints", "Basic threat detection", "Email alerts", "Standard support"] },
-            { name: "Corporate", price: "$2,499/mo", features: ["Up to 1000 endpoints", "Advanced ML detection", "SOAR integration", "24/7 support"] },
-            { name: "Enterprise", price: "Custom", features: ["Unlimited endpoints", "Custom ML models", "Dedicated SOC", "On-premise option"] }
-        ]
+        techStack: ["React", "Node.js", "Twilio", "PostgreSQL", "Redis", "Vercel"],
+        testimonial: {
+            quote: "Evant tripled our event attendance within the first month. The text-to-RSVP feature removed all friction from the sign-up process.",
+            author: "Community Director"
+        }
+    },
+    "almma-ai": {
+        title: "Almma AI",
+        tagline: "AI-Powered Conversation Platform.",
+        intro: "Almma AI is a sophisticated AI-powered conversation platform that helps businesses deploy intelligent agents for customer engagement, support, and workflow automation — all through an intuitive dashboard interface.",
+        projectsShipped: "35+",
+        liveUrl: "https://chat.almma.ai/",
+        screenshot: "/projects/almma-new.png",
+        category: "AI / Conversational Platform",
+        year: "2024",
+        detailedDescription: "Almma AI provides a comprehensive dashboard for managing AI-powered conversations at scale. The platform enables businesses to create, train, and deploy custom AI agents that handle customer interactions across multiple channels. With advanced analytics, conversation history tracking, and integration capabilities, Almma AI serves as the central hub for all AI-driven customer communication. The platform features a clean, intuitive interface designed for both technical and non-technical users, with robust security and user management built in.",
+        imageKeyword: "ai conversation platform dashboard",
+        features: [
+            "Custom AI agent creation and training dashboard",
+            "Multi-channel conversation management",
+            "Advanced analytics and conversation insights",
+            "Secure user authentication and role management",
+            "Integration with existing business workflows",
+            "Real-time conversation monitoring and intervention"
+        ],
+        useCases: [
+            { title: "Customer Support", desc: "Deploy AI agents that understand your product and resolve customer issues autonomously." },
+            { title: "Sales Automation", desc: "Qualify leads and schedule demos through intelligent AI-driven conversations." },
+            { title: "Internal Knowledge Base", desc: "Create AI assistants that help employees find answers from company documentation." },
+            { title: "Service Desk", desc: "Automate IT and HR service desk with AI-powered ticket resolution." }
+        ],
+        techStack: ["Next.js", "Python", "OpenAI", "LangChain", "MongoDB", "Docker"],
+        testimonial: {
+            quote: "Almma AI gave us the ability to deploy custom AI agents that truly understand our business context. The results exceeded our expectations.",
+            author: "CTO, Enterprise Client"
+        }
+    },
+    "halo": {
+        title: "Aviso HALO",
+        tagline: "See Everything. Orchestrate Anything.",
+        intro: "HALO is the first true AI Single Pane of Glass for Revenue — built by Aviso to unify your entire revenue ecosystem into one adaptive, intelligent layer that turns every seller moment into action.",
+        projectsShipped: "150+",
+        liveUrl: "https://www.aviso.com/halo",
+        screenshot: "/projects/halo-chat.png",
+        category: "AI / Sales Intelligence",
+        year: "2025",
+        detailedDescription: "HALO is a revolutionary AI-powered overlay that transforms how revenue teams work. Unlike traditional dashboards that add complexity, HALO acts as a glass-layer overlay that works across your existing sales apps — CRM, LinkedIn, email, calendar — providing live context, AI guidance, and automated actions without ever switching tabs. Powered by Aviso's Agentic AI Framework, HALO helps sellers plan their day around pipeline-moving activities, research buyers with live AI cues on LinkedIn profiles, walk into meetings with AI-powered briefs, close the loop with auto-generated follow-ups synced to CRM, act on at-risk deals directly in Salesforce, and forecast smarter by patching pipeline gaps mid-week. Enterprise customers have replaced multiple disconnected tools and reduced their overall sales tech stack costs by up to 50%.",
+        imageKeyword: "ai sales intelligence overlay",
+        features: [
+            "AI-generated daily schedules built from live deals and meetings",
+            "Live buyer research with AI cues on LinkedIn profiles",
+            "AI-powered meeting briefs with past conversations and next steps",
+            "Auto-generated meeting notes synced to CRM after calls",
+            "At-risk deal resolution directly inside Salesforce",
+            "Smart pipeline gap patching for cleaner forecasts"
+        ],
+        useCases: [
+            { title: "Daily Planning", desc: "Start focused every day with an AI-generated schedule built from live deals, meetings, and pending actions." },
+            { title: "Buyer Research", desc: "Research smarter with live buyer insights and AI cues on LinkedIn profiles without breaking workflow." },
+            { title: "Meeting Preparation", desc: "Walk into every call prepared with AI-powered briefs covering past conversations, buyer insights, and key next steps." },
+            { title: "Deal Acceleration", desc: "Close the loop faster — HALO summarizes discussions, sends meeting notes, and syncs next steps to CRM automatically." }
+        ],
+        techStack: ["React", "Python", "Agentic AI", "Chrome Extension", "Salesforce API", "LinkedIn API"],
+        testimonial: {
+            quote: "Halo is the single most impactful tool we've added to our sales tech stack. It's like having a personal GTM companion that's always on and always acting.",
+            author: "VP of Revenue Operations"
+        }
+    },
+    "resumeoptima": {
+        title: "ResumeOptima (ERPSoft)",
+        tagline: "Build Your Perfect CV.",
+        intro: "A professional CV and resume builder platform designed with an elegant, enterprise-grade UI to help users create standout professional profiles.",
+        projectsShipped: "10+",
+        liveUrl: "https://cv.erpsoft.pk/app/dashboards/default",
+        screenshot: "/projects/resumeoptima-new.png",
+        category: "SaaS / Career Tools",
+        year: "2024",
+        detailedDescription: "ResumeOptima serves as a sophisticated resume building management system. Featuring an incredibly clean, dual-pane enterprise aesthetic, the platform abstracts away the complexity of traditional resume formatting. Users simply input their professional history, and the system intelligently constructs a highly optimized, ATS-friendly document ready for job applications. Security and user privacy are prioritized through robust authentication mechanisms, making it safe for users to manage their sensitive career data.",
+        imageKeyword: "cv builder dashboard",
+        features: [
+            "Modern, enterprise-grade Dual-Pane UI",
+            "Secure authentication and user session management",
+            "ATS-optimized professional resume templates",
+            "Real-time visual CV preview",
+            "Password recovery and profile management"
+        ],
+        useCases: [
+            { title: "Career Advancement", desc: "Crafting optimized resumes that pass Applicant Tracking Systems and impress recruiters." },
+            { title: "Profile Management", desc: "Securely storing and updating professional history in one centralized dashboard." }
+        ],
+        techStack: ["React", "Node.js", "Tailwind CSS", "Enterprise Auth", "PDF Generation Pipeline"],
+        testimonial: {
+            quote: "The interface is incredibly smooth and professional. It turns the stressful task of building a CV into a seamless, straightforward process.",
+            author: "Lead Recruiter"
+        }
     }
 };
 
@@ -176,7 +222,10 @@ export const getProductData = (id) => {
         tagline: "Innovation Delivered.",
         intro: "A cutting-edge product designed to solve complex business challenges with elegant technology solutions.",
         projectsShipped: "50+",
-        detailedDescription: "This product represents the culmination of extensive research, development, and real-world testing. Built with scalability, security, and user experience at its core, it addresses specific pain points while remaining flexible enough to adapt to unique business requirements. Our team continuously enhances the product based on customer feedback and emerging industry trends.",
+        screenshot: "",
+        category: "Technology",
+        year: "2024",
+        detailedDescription: "This product represents the culmination of extensive research, development, and real-world testing. Built with scalability, security, and user experience at its core.",
         imageKeyword: "technology product innovation",
         features: [
             "Intuitive user interface designed for efficiency",
@@ -192,11 +241,6 @@ export const getProductData = (id) => {
             { title: "Customer Engagement", desc: "Enhance customer experiences and build loyalty." },
             { title: "Strategic Planning", desc: "Make informed decisions with data-driven insights." }
         ],
-        techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "GraphQL"],
-        pricing: [
-            { name: "Starter", price: "$299/mo", features: ["Core features", "Standard support", "Cloud hosting", "Basic analytics"] },
-            { name: "Professional", price: "$999/mo", features: ["Advanced features", "Priority support", "Custom integrations", "Advanced analytics"] },
-            { name: "Enterprise", price: "Custom", features: ["White-label option", "Dedicated support", "On-premise deployment", "SLA guarantee"] }
-        ]
+        techStack: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "GraphQL"]
     };
 };

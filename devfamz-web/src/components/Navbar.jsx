@@ -106,12 +106,11 @@ const Navbar = () => {
 
     // Products Data Structure
     const products = [
-        { label: "AI Automation Suite", id: "ai-automation-suite" },
-        { label: "Cloud Dashboard Pro", id: "cloud-dashboard-pro" },
-        { label: "Blockchain Identity System", id: "blockchain-identity-system" },
-        { label: "IoT Device Manager", id: "iot-device-manager" },
-        { label: "CMS Headless Platform", id: "cms-headless-platform" },
-        { label: "Cybersecurity Shield", id: "cybersecurity-shield" }
+        { label: "DentAI", id: "dentai" },
+        { label: "Chatbase", id: "chatbase" },
+        { label: "Aviso", id: "aviso" },
+        { label: "Evant", id: "evant" },
+        { label: "Almma AI", id: "almma-ai" }
     ];
 
     const navItems = [
@@ -249,15 +248,15 @@ const Navbar = () => {
                         </AnimatePresence>
                     </div>
 
-                    {/* Products - Single Link */}
+                    {/* Products - Link to Portfolio */}
                     <NavLink
-                        to="/products/ai-automation-suite"
-                        className={({ isActive }) => `relative group text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${isActive ? 'text-primary' : mutedColorClass}`}
+                        to="/products"
+                        className={({ isActive }) => `relative group text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${isActive || location.pathname.startsWith('/products') ? 'text-primary' : mutedColorClass}`}
                     >
                         {({ isActive }) => (
                             <>
                                 Products
-                                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive || location.pathname.startsWith('/products') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                             </>
                         )}
                     </NavLink>
@@ -362,7 +361,7 @@ const Navbar = () => {
 
                             {/* Mobile Products Link */}
                             <NavLink
-                                to="/products/ai-automation-suite"
+                                to="/products"
                                 onClick={() => setIsOpen(false)}
                                 className={({ isActive }) => `text-lg font-medium py-3 border-b border-border/10 ${isActive ? 'text-primary pl-2' : 'text-muted'}`}
                             >

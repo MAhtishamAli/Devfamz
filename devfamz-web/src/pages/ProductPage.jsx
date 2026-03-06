@@ -1,21 +1,17 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, Code, Zap, Shield, Clock } from 'lucide-react';
+import { ArrowLeft, Check, Code, Zap, Shield, Clock, ExternalLink, Quote, Calendar, Globe, Tag } from 'lucide-react';
 import { getProductData } from '../data/productDetails';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import SEO from '../components/SEO';
 
 const ProductPage = () => {
     const { id } = useParams();
     const product = getProductData(id);
-    const [imageUrl, setImageUrl] = useState('');
 
     useEffect(() => {
-        // Generate image using Unsplash
-        const query = encodeURIComponent(product.imageKeyword || 'technology');
-        setImageUrl(`https://source.unsplash.com/800x600/?${query}`);
         window.scrollTo(0, 0);
-    }, [id, product.imageKeyword]);
+    }, [id]);
 
     return (
         <main className="pt-24 min-h-screen bg-background">
@@ -25,9 +21,9 @@ const ProductPage = () => {
             />
             {/* Hero Section */}
             <section className="container mx-auto px-6 py-12">
-                <Link to="/" className="inline-flex items-center gap-2 text-muted hover:text-primary transition-colors mb-8">
+                <Link to="/products" className="inline-flex items-center gap-2 text-muted hover:text-primary transition-colors mb-8">
                     <ArrowLeft size={18} />
-                    Back to Home
+                    Back to Products
                 </Link>
 
                 <motion.div
@@ -37,6 +33,22 @@ const ProductPage = () => {
                 >
                     {/* Left Content */}
                     <div>
+                        {/* Category & Year Badges */}
+                        <div className="flex flex-wrap gap-3 mb-6">
+                            {product.category && (
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold bg-primary/10 text-primary border border-primary/20 rounded-full">
+                                    <Tag size={12} />
+                                    {product.category}
+                                </span>
+                            )}
+                            {product.year && (
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold bg-surface border border-border/20 text-muted rounded-full">
+                                    <Calendar size={12} />
+                                    {product.year}
+                                </span>
+                            )}
+                        </div>
+
                         <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">{product.title}</h1>
                         <p className="text-2xl text-primary font-mono mb-6">{product.tagline}</p>
                         <p className="text-lg text-muted mb-8">{product.intro}</p>
@@ -58,26 +70,60 @@ const ProductPage = () => {
                             </div>
                         </div>
 
-                        <Link
-                            to="/contact"
-                            className="inline-block px-8 py-4 bg-primary text-black font-bold rounded hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
-                        >
-                            Get Started Now
-                        </Link>
+                        <div className="flex flex-wrap gap-4">
+                            <Link
+                                to="/contact"
+                                className="inline-block px-8 py-4 bg-primary text-black font-bold rounded hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+                            >
+                                Get Started Now
+                            </Link>
+                            {product.liveUrl && (
+                                <a
+                                    href={product.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/30 text-primary font-bold rounded hover:bg-primary/10 transition-all"
+                                >
+                                    <Globe size={18} />
+                                    Visit Live Site
+                                    <ExternalLink size={14} />
+                                </a>
+                            )}
+                        </div>
                     </div>
 
-                    {/* Right Image */}
+                    {/* Right Image - Showcase */}
                     <div className="relative">
                         <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
-                        <img
-                            src={imageUrl}
-                            alt={product.title}
-                            className="relative rounded-2xl shadow-2xl border border-border/10 w-full h-auto"
-                            loading="lazy"
-                        />
+                        <div className="relative rounded-2xl shadow-2xl overflow-hidden">
+                            <img
+                                src={product.screenshot}
+                                alt={`${product.title} - Product Showcase`}
+                                className="w-full h-auto rounded-2xl"
+                                loading="lazy"
+                            />
+                        </div>
                     </div>
                 </motion.div>
             </section>
+
+            {/* Testimonial */}
+            {product.testimonial && (
+                <section className="container mx-auto px-6 py-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
+                    >
+                        <Quote className="text-primary/30 mb-4" size={48} />
+                        <p className="text-xl md:text-2xl text-foreground font-medium italic mb-6 leading-relaxed">
+                            "{product.testimonial.quote}"
+                        </p>
+                        <p className="text-primary font-mono font-bold">— {product.testimonial.author}</p>
+                    </motion.div>
+                </section>
+            )}
 
             {/* Detailed Description */}
             <section className="bg-surface/30 py-16">
@@ -156,48 +202,6 @@ const ProductPage = () => {
                 </section>
             )}
 
-            {/* Pricing */}
-            <section className="bg-surface/50 py-16">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold mb-4 text-center text-foreground">Pricing Plans</h2>
-                    <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
-                        Choose the plan that fits your needs. All plans include free updates and support.
-                    </p>
-
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {product.pricing?.map((plan, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className={`p-8 rounded-2xl border ${idx === 1 ? 'bg-primary/5 border-primary shadow-xl scale-105' : 'bg-background border-border/10'}`}
-                            >
-                                <h3 className="text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
-                                <div className="text-4xl font-bold mb-6 text-primary">{plan.price}</div>
-
-                                <ul className="space-y-3 mb-8">
-                                    {plan.features.map((feature, fIdx) => (
-                                        <li key={fIdx} className="flex items-start gap-3 text-muted">
-                                            <Check className="text-primary flex-shrink-0 mt-1" size={18} />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link
-                                    to="/contact"
-                                    className={`block w-full text-center py-3 rounded-lg font-bold transition-all ${idx === 1 ? 'bg-primary text-black hover:bg-primary/90' : 'bg-surface border border-border/10 text-foreground hover:border-primary/30'}`}
-                                >
-                                    Get Started
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* CTA Section */}
             <section className="container mx-auto px-6 py-16">
                 <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-12 text-center border border-primary/20">
@@ -205,13 +209,26 @@ const ProductPage = () => {
                     <p className="text-lg text-muted mb-8 max-w-2xl mx-auto">
                         Join {product.projectsShipped} successful projects. Let's build something amazing together.
                     </p>
-                    <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-black font-bold rounded hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
-                    >
-                        <Clock size={20} />
-                        Schedule a Consultation
-                    </Link>
+                    <div className="flex flex-wrap gap-4 justify-center">
+                        <Link
+                            to="/contact"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-black font-bold rounded hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+                        >
+                            <Clock size={20} />
+                            Schedule a Consultation
+                        </Link>
+                        {product.liveUrl && (
+                            <a
+                                href={product.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-primary/30 text-primary font-bold rounded hover:bg-primary/10 transition-all"
+                            >
+                                <ExternalLink size={20} />
+                                View Live Project
+                            </a>
+                        )}
+                    </div>
                 </div>
             </section>
         </main>

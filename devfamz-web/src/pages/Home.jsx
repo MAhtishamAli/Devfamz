@@ -4,6 +4,7 @@ import Stats from '../components/Stats';
 import TrustBar from '../components/TrustBar';
 import Benefits from '../components/Benefits';
 import Testimonials from '../components/Testimonials';
+import CalendlyCTA from '../components/CalendlyCTA';
 
 import SEO from '../components/SEO';
 
@@ -19,6 +20,7 @@ const Home = () => {
             <TrustBar />
             <Benefits />
             <Testimonials />
+            <CalendlyCTA />
         </main>
     );
 };

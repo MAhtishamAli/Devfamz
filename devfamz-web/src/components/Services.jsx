@@ -300,15 +300,7 @@ const Services = () => {
 
             <div className="container mx-auto px-6 relative z-10">
 
-                {/* Main Header */}
-                <div className="mb-20 text-center max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-sans tracking-tight">
-                        Our <span className="text-primary">Capabilities</span>_
-                    </h2>
-                    <p className="text-muted text-lg font-mono">
-                        Detailed expertise. Scalable execution. Critical reliability.
-                    </p>
-                </div>
+                {/* Service Categories Header removed as requested */}
 
                 {/* Service Categories */}
                 <div className="space-y-32">

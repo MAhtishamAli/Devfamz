@@ -8,6 +8,7 @@ export const serviceDetails = {
         projectsShipped: "150+",
         detailedDescription: "Our Flutter development process is built on a foundation of rigorous architectural patterns and reusable component libraries. We don't just build screens; we architect scalable systems. By utilizing Bloc for predictable state management and ensuring 100% test coverage for critical business logic, we deliver applications that are robust and easy to maintain. Our team specializes in bridging the native gap, writing custom platform channels to access device-specific hardware features that standard plugins can't reach, ensuring your app has no limitations.",
         imageKeyword: "flutter mobile app",
+        image: "/services/flutter.png",
         usps: [
             { title: "Custom RenderObjects", desc: "We write custom render objects for complex UI interactions others say are impossible." },
             { title: "Bi-Directional Channels", desc: "Proprietary platform channels for 10x faster Dart-to-Native communication." },
@@ -26,6 +27,7 @@ export const serviceDetails = {
         projectsShipped: "85+",
         detailedDescription: "For applications demanding absolute peak performance and seamless system integration, our native iOS team delivers. We leverage the latest Swift concurrency models to ensure main-thread fludity while handling heavy data processing in the background. Our deep understanding of UIKit and SwiftUI allows us to create pixel-perfect implementations of complex designs. We also specialize in Apple-specific frameworks like ARKit, CoreML, and HealthKit, unlocking capabilities that cross-platform solutions simply cannot match.",
         imageKeyword: "iphone ios swift",
+        image: "/services/ios.png",
         usps: [
             { title: "Metal Graphics API", desc: "Direct GPU access for buttery smooth animations." },
             { title: "App Clips", desc: "Instant-use versions of your app for higher conversion." },
@@ -44,6 +46,7 @@ export const serviceDetails = {
         projectsShipped: "90+",
         detailedDescription: "Navigating the fragmented Android ecosystem requires deep expertise. Our team builds resilience into every layer of the application, ensuring consistent behavior across manufacturers and OS versions. We embrace modern Android development practices, using Jetpack Compose for declarative UI and Hilt for dependency injection. Whether it's optimizing for foldable devices or ensuring backward compatibility, we build Android apps that feel premium and perform reliably under any conditions.",
         imageKeyword: "android phone kotlin",
+        image: "/services/android.png",
         usps: [
             { title: "Fragment Optimization", desc: "Advanced lifecycle handling to prevent crashes." },
             { title: "Material You Design", desc: "Dynamic theming engine matching user wallpaper." },
@@ -62,6 +65,7 @@ export const serviceDetails = {
         projectsShipped: "40+",
         detailedDescription: "Legacy code is a liability. Our modernization strategy focuses on risk mitigation and incremental improvement. We don't just rewrite; we re-architect for the future. By introducing modularization, automated testing, and CI/CD pipelines into legacy environments, we stop the bleeding and start the healing. We are experts at strangler fig patterns, slowly replacing monolithic legacy components with modern, micro-service or modular implementations without disrupting live operations.",
         imageKeyword: "code refactoring",
+        image: "/services/modernization.png",
         usps: [
             { title: "Incremental Migration", desc: "Refactor module by module with zero downtime." },
             { title: "Debt Reduction", desc: "Eliminate years of accumulated technical debt." },
@@ -80,6 +84,7 @@ export const serviceDetails = {
         projectsShipped: "35+",
         detailedDescription: "Wearables demand a different design philosophy: glanceability and efficiency. Our team optimizes every byte of memory and every millisecond of processor time to respect the constraints of wearable hardware. We build standalone apps that function independently of the phone, as well as rich companion experiences that extend your mobile app's reach. From health monitoring with sensor fusion to quick-action controls for IoT devices, we unlock the full potential of the wrist.",
         imageKeyword: "smartwatch apple watch",
+        image: "/services/wearable.png",
         usps: [
             { title: "Battery Optimization", desc: "Algorithms designed to minimize power consumption." },
             { title: "HealthKit Integration", desc: "Secure handling of sensitive biometric data." },
@@ -98,6 +103,7 @@ export const serviceDetails = {
         projectsShipped: "200+",
         detailedDescription: "Great design is invisible; it just works. Our design process starts with deep empathy for the user, mapped out through comprehensive user journeys. We move from low-fidelity wireframes to high-fidelity, interactive prototypes that simulate the actual feel of the application. We pay special attention to the 'thumb zone' and gesture-based navigation, ensuring that your app is not just beautiful, but ergonomically sound and accessible to all users.",
         imageKeyword: "mobile app design ui",
+        image: "/services/uiux.png",
         usps: [
             { title: "Micro-Interactions", desc: "Subtle animations that provide satisfying feedback." },
             { title: "Thumb-Zone Layouts", desc: "Controls placed for easy one-handed use." },
@@ -116,6 +122,7 @@ export const serviceDetails = {
         projectsShipped: "25+",
         detailedDescription: "Augmented Reality transforms how users interact with the world. We push the boundaries of ARKit and ARCore to build stable, markerless tracking experiences. Whether it's visualizing furniture in a living room with accurate scale and lighting, or creating immersive gamified marketing campaigns, our 3D artists and developers work in unison to create believable, high-performance AR overlays that run smoothly on consumer hardware.",
         imageKeyword: "augmented reality phone",
+        image: "/services/arvr.png",
         usps: [
             { title: "SLAM Technology", desc: "Precise Simultaneous Localization and Mapping." },
             { title: "Photorealistic Rendering", desc: "High-quality 3D models with realistic lighting." },
@@ -134,6 +141,7 @@ export const serviceDetails = {
         projectsShipped: "45+",
         detailedDescription: "IoT apps require a unique blend of embedded systems knowledge and mobile development prowess. We understand the intricacies of Bluetooth Low Energy (BLE) handshakes, MQTT messaging protocols, and local network discovery. We build apps that handle the 'happy path' perfectly but also gracefully handle connection drops, latency, and hardware errors, ensuring that the user never feels disconnected from their devices.",
         imageKeyword: "internet of things smart home",
+        image: "/services/iot.png",
         usps: [
             { title: "Bluetooth Low Energy", desc: "Optimized protocols for instant device connection." },
             { title: "Secure Handshake", desc: "Bank-grade encryption for device pairing." },
@@ -154,6 +162,7 @@ export const serviceDetails = {
         projectsShipped: "60+",
         detailedDescription: "Enterprise SaaS is our bread and butter. We architect systems designed for multi-tenancy from the ground up, ensuring strict logical and physical data isolation. We implement complex Role-Based Access Control (RBAC) systems, detailed audit logging, and SSO integrations to meet the compliance needs of large organizations. Our focus on backend scalability means your platform remains responsive whether you have ten users or ten thousand.",
         imageKeyword: "dashboard analytics",
+        image: "/services/saas.png",
         usps: [
             { title: "Tenant Isolation", desc: "Physical data separation logic ensuring security." },
             { title: "Audit Logs", desc: "Complete trail of every action for compliance." },
@@ -172,6 +181,7 @@ export const serviceDetails = {
         projectsShipped: "125+",
         detailedDescription: "We are at the bleeding edge of the React ecosystem, utilizing Next.js 14 and React Server Components to deliver web applications that are incredibly fast and SEO-friendly. By moving logic to the server, we reduce the client-side bundle size, leading to faster First Contentful Paint times. We integrate headless CMSs, diverse APIs, and modern animation libraries to create web experiences that are not just functional, but engaging and memorable.",
         imageKeyword: "react code monitor",
+        image: "/services/react.png",
         usps: [
             { title: "Server Actions", desc: "Secure backend logic directly in components." },
             { title: "Edge Caching", desc: "Global content delivery in under 100ms." },
@@ -190,6 +200,7 @@ export const serviceDetails = {
         projectsShipped: "75+",
         detailedDescription: "In e-commerce, speed equals revenue. Our headless approach decouples the frontend from the backend, allowing us to build blazing fast shopping experiences that aren't constrained by template limits. We focus on optimizing the conversion funnel, from instant-load product pages to streamlined one-page checkouts. We integrate with best-in-class tools for search (Algolia), payments (Stripe), and logistics, creating a unified and powerful selling machine.",
         imageKeyword: "ecommerce shopping cart",
+        image: "/services/ecommerce.png",
         usps: [
             { title: "Headless Speed", desc: "Decoupled frontend for instant page loads." },
             { title: "Custom Checkout", desc: "Tailored flows to maximize conversion rates." },
@@ -208,6 +219,7 @@ export const serviceDetails = {
         projectsShipped: "55+",
         detailedDescription: "PWAs offer the best of both worlds: the reach of the web with the engagement of an app. We build sophisticated Service Worker strategies to ensure your app loads instantly, even on flaky networks. We implement 'Add to Home Screen' flows that dramatically increase retention. With capabilities like Push Notifications and Background Sync, we enable you to engage users just like a native app, but without the friction of the App Store.",
         imageKeyword: "mobile web browser",
+        image: "/services/flutter.png",
         usps: [
             { title: "Offline First", desc: "Service workers cache content for no-network use." },
             { title: "Installable", desc: "Add to home screen without an app store." },
@@ -226,6 +238,7 @@ export const serviceDetails = {
         projectsShipped: "110+",
         detailedDescription: "Content management shouldn't be a bottleneck. We implement Headless CMS solutions that empower non-technical teams to manage content with ease, while developers maintain control over the frontend presentation. We structure data content-first, making it reusable across web, mobile, and social channels. With features like real-time preview and granular workflow approvals, we harmonize the relationship between marketing agility and engineering stability.",
         imageKeyword: "content management system",
+        image: "/services/saas.png",
         usps: [
             { title: "Structured Content", desc: "Future-proof data modeling for any channel." },
             { title: "Live Preview", desc: "Real-time editing experience for safe updates." },
@@ -244,6 +257,7 @@ export const serviceDetails = {
         projectsShipped: "30+",
         detailedDescription: "Blockchain is redefining trust. Our team builds secure, gas-efficient smart contracts on Ethereum, Solana, and Polygon. We understand that the biggest barrier to Web3 adoption is UX, so we build intuitive frontends that abstract away the complexity of wallets and transactions. From tokenomics design to auditing and deployment, we guide you through the entire decentralized landscape safely and effectively.",
         imageKeyword: "blockchain crypto",
+        image: "/services/react.png",
         usps: [
             { title: "Gas Optimization", desc: "Smart contracts written to minimize transaction costs." },
             { title: "Wallet Agnostic", desc: "Support for MetaMask, Rainbow, Coinbase, and more." },
@@ -262,6 +276,7 @@ export const serviceDetails = {
         projectsShipped: "95+",
         detailedDescription: "For content-heavy sites, Jamstack is unbeatable. We build sites that are pre-rendered at build time and served directly from the Edge, resulting in near-instant load times globally. This architecture effectively eliminates the risk of server-side hacks, as there is no traditional server to hack. We integrate serverless functions for dynamic needs like form handling and payments, keeping your infrastructure simple, cheap, and infinitely scalable.",
         imageKeyword: "server rack fast",
+        image: "/services/saas.png",
         usps: [
             { title: "Unhackable Surface", desc: "No database or server to exploit directly." },
             { title: "Instant Load", desc: "Pre-built HTML served from the edge." },
@@ -282,6 +297,7 @@ export const serviceDetails = {
         projectsShipped: "20+",
         detailedDescription: "Generative AI is changing the landscape of business automation. We help you go beyond generic ChatGPT prompts by building custom RAG (Retrieval-Augmented Generation) pipelines that allow AI to securely access and reason over your proprietary data. We handle the complexity of vector databases, embedding models, and prompt engineering to deliver accurate, hallucination-resistant AI agents that can automate customer support, analysis, and content generation tasks.",
         imageKeyword: "artificial intelligence brain",
+        image: "/services/arvr.png",
         usps: [
             { title: "Private Deployment", desc: "Your data never leaves your VPC." },
             { title: "Hallucination Guard", desc: "Verification layers to ensure accuracy." },
@@ -304,6 +320,7 @@ export const getServiceData = (id) => {
         projectsShipped: "50+",
         detailedDescription: "We leverage industry-leading practices and cutting-edge tools to deliver this service. Our team is dedicated to understanding your specific business requirements and tailoring our approach to meet your goals. From initial consultation to final deployment and ongoing support, we ensure a transparent and collaborative process. We prioritize code quality, security, and performance, ensuring that the solution we build for you stands the test of time and scales with your success.",
         imageKeyword: "technology abstract blue",
+        image: "/services/react.png",
         usps: [
             { title: "Senior Engineering", desc: "Built by experts with deep domain knowledge." },
             { title: "Scalable Architecture", desc: "Designed to grow effortlessly with your user base." },

@@ -67,18 +67,14 @@ const ServicePage = () => {
 
             {/* Visuals Section */}
             <Section className="py-12">
-                <div className="relative rounded-2xl overflow-hidden border border-border/20 shadow-2xl">
+                <div className="relative rounded-2xl overflow-hidden border border-border/20 shadow-2xl group">
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                    {/* Using a placeholder service since Unsplash source is unreliable, specific static images recommended later */}
-                    <div className="w-full h-[400px] md:h-[500px] bg-surface/50 flex items-center justify-center relative overflow-hidden group">
-                        {/* Placeholder Abstract Tech Art */}
-                        <div className="absolute inset-0 opacity-30 flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"></div>
-                        <div className="z-20 p-8 bg-background/80 backdrop-blur-md border border-border/20 rounded-xl text-center max-w-lg">
-                            <Code size={48} className="mx-auto mb-4 text-primary" />
-                            <h3 className="text-2xl font-bold mb-2">Visualizing {data.title}</h3>
-                            <p className="text-muted">High-fidelity execution tailored for your business.</p>
-                        </div>
-                    </div>
+                    <img
+                        src={data.image || `/services/react.png`}
+                        alt={`${data.title} - Professional Service`}
+                        className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                    />
                 </div>
             </Section>
 
